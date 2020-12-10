@@ -1,0 +1,25 @@
+﻿Du befindest dich an Bord deines Fischerbootes auf hoher See. Während deine zum Trocknen aufgehängte Netze in der Abendbrise schaukeln, liegst du im Bug deines Schiffes, schaust in die untergehende Sonne und denkst an dein zu Hause zurückgebliebene Familie. Die Wellen schlagen leise an den Schiffsrumpf. Allmählich fühlst du, wie du von einer wohligen Müdigkeit umfangen wirst. In einen tiefen, traumlosen Schlaf hinübergleitend, hörst du noch das leise Säuseln des Windes.
+
+Du versuchst deine Augen zu öffnen, musst sie aber sofort geblendet wieder schließen.Du fühlst dich wie zerschlagen. Die Augen mit der Hand bedeckend blinzelst du in die gleißende Sonne und versuchst mühsam, dich aufzurappeln. Taumelnd kommst du wieder auf die Beine und blickst dich verstört um:
+
+Du stehst auf einem weiten Sandstrand. Einige zehn Meter hinter dir, im Süden, bricht sich die Brandung auf dem Strand. Im Norden siehst du einen dichten Palmenwald, der wie eine grüne Wand zum wolkenlosen Himmel emporragt. Der Strand, auf dem du stehst, setzt sich nach Osten und Westen fort. Als du den Strand näher betrachtest erkennst du, dass du dich in einer Zone von angeschwemmten Holz und Tang befindest: könnte das die Hochwasserlinie sein? Dann wärst du angespült worden…
+
+Du stehst auf einem weiten Strand der aus Myriaden von kleinen violett glänzenden Muschelschalen besteht. Er setzt sich nach Osten und Westen fort. Einige zehn Meter im Süden siehst du das spiegelglatte Meer. Nördlich von dir ragt die dichtgeschlossene Wand eines türkisgrünen Waldes zum glühenden Himmel auf. Nur an einigen Stellen scheinen die Lianen einen schmalen Durchgang zu gewähren.
+
+Raumbeschreibungen(Strand)
+
+76: Die cyanblauen Muschelschalen unter deinen Füßen knirschen leise. Nach Osten hin setzt sich der Strand fort, im Süden braust der Ozean. Im Norden und Westen rauscht der unergründliche Wald.
+
+85: Der Strand hat hier eine ziegelrote Färbung. Du musst aufpassen, um den vielen Wasserlachen auszuweichen, die ihn bedecken, Im Osten versperrt dir ein reißender Fluss den Weg, der seiner Mündung zutreibt, südlich liegt eine Strandfläche, hinter der sich Klippen erheben. Im Westen ist das Meer, das dich mit seinem Rauschen geheimnisvoll anzieht. Nördlich von dir beginnt der Wald.
+
+95: Der zitronengelbe Strand ist hier stark begrenzt; im Osten durch die Mündung des Flusses, im Süden durch die roten Granitklippen, deren Besteigung ein lebensgefährliches Wagnis wäre. Lediglich im Westen, wo sich das Meer erstreckt, und im Norden, wo sich der Strand fortsetzt, ist der Weg frei.
+
+77: Vor dir in den violetten Muscheln siehst du halb verschüttete Fußstapfen. Vielleicht bist du nicht das einzige menschliche Wesen hier? Der Strand erstreckt sich nach Ost und West. Im Süden liegt der Spiegel des Meeres, im Norden wie eine Mauer der Wald.
+
+78: Hier haben die Muscheln eine leuchtend orange Färbung. Im Norden liegt der Wald, im Süden das Meer, im Osten und Westen weiterhin der Strand.
+
+79: Hier gehst du auf kornblumenblauen Muscheln. Zwischen ihnen liegen riesige weiße Schneckenhäuser, die wie die Sterne am Firmament leuchten. Du blickst nach Osten und siehst ein großes, mit Sand bedecktes Gebiet, dass du zum Glück noch rechtzeitig als Treibsand erkennst. Im Süden und Westen liegen weitere Strandstücke, im Norden trittst du in den Wald hinein.
+
+80, 90: Du betrittst die trügerische Sandoberfläche und panischer Schrecken ergreift dich. Verzweifelnd zappelnd, sinkst du immer tiefer in den Sand ein, der dich wie mit eisernen Klammern festhält. Du erhebst noch einmal den Blick zum Himmel, bevor sich die Sandoberfläche endgültig über dir schließt…
+
+89: Auf diesem Teil des Strandes scheine die Muscheln zu glühen. Voller Erstaunen hebst du eine Handvoll auf und stellst fest, dass dein Eindruck nur von der pulsierenden Rotfärbung herrührt. Du siehst  dich im Westen und Süden von Meer umgeben. Im Osten machst du die trügerisch schimmernde Fläche von Treibsand, im Norden ein weiteres Strandstück aus.
