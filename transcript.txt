@@ -171,3 +171,100 @@ Meer unter Wasser
 87: Der Boden ist hier knöcheltief mit Tang bedeckt, der deine Füße umfließt. Nach Norden geht es zum Strand, nach Süden, Osten und Westen tiefer ins Meer.
 
 88: Seeanemonen erfreuen deine Augen mit ihren exotischen Farben. Nach Norden und Osten gelangt man auf den Strand.
+
+96: Der Strand liegt hier im Westen. Ein Korallenriff im Süden erstaunt dich mit unwahrscheinlicher Formenvielfalt. Bunte Fische schießen zwischen den Korallenästen umher.
+
+98: Südlich von dir erstreckt sich ein Riff, das von pittoresken Korallen überzogen ist. Alle anderen Wege bleiben unversperrt.
+
+97: Genau im Süden ragt vor dir ein ungeheures Korallenriff hoch. Eine metergroße Muschel liegt vor deren Füßen auf dem Land. Es ist jedoch sinnlos, sie zu öffnen zu versuchen.
+
+99: Das Riff im Süden macht hier eine Kurve, sodass du auch im Osten nicht weiter kannst. Der mit Land bedeckte Meeresgrund führt jedoch im Norden auf den Strand.
+unter_wasser = -1, =0
+
+Du spannst den Hahn, zielst und drückst ab. Der rostige Schießprügel birst mit einem gewaltigen Knall. Du spürst einen stechenden Schmerz im Kopf – und dann nichts mehr.
+
+Beschreibungen:
+
+1: Es handelt sich um einen schmalen Goldring, der mit einem funkelnden Brillianten besetzt ist.
+
+2: Die Flinte ist ziemlich verrostet. Auf dem Schaft sind prächtige Schnitzereien sichtbar. Eine Gravierung auf dem Lauf verrät dir, dass es sich um eine Produktion von Wesley & Lie. Sie ist übrigens geladen.
+
+3: Es ist eine massive Goldscheibe, in die eine dämonische Fratze eingeritzt ist. Dich überläuft unwillkürlich ein Schauer.
+
+4: Die exotische Schönheit der purpurroten Blüte beeindruckt dich. Aus ihr quillt giftgrüner Saft.
+
+5: Ein Löffel ohne besondere Verzierung, anscheinend ein Eierlöffel.
+
+6: Es handelt sich um ein zweiseitig geschliffenes, ziemlich scharfes Stahlmesser.
+
+7: Die Gabel hat sieben Zinken, die wie die Klauen eines Vogelfußes angeordnet sind.
+
+8: Die Flasche aus blauem Glas ist mit weinrotem Siegellack verschlossen. Sie enthält wirbelnde Rauchschwaden. Oder ist es eine Sinnestäuschung?
+
+9: Es ist ein Rundschild aus dem schwarzen Holz des Eisenbaums; Auf ihm ist in hellen Farben ein Ameisenbär gemalt.
+
+10: Es ist deine Kappe, die du immer beim Fischen als Sonnenschutz getragen hast.
+
+11: Die Kette besteht aus verschiedenen, geschliffenen Edelsteinen: Diamanten, Smaragde, Rubine usw.
+
+Ein Blutstrahl schießt aus der Wunde des Trolls. Er bricht tot zusammen!
+
+Das Messer glitscht an der Haut des Monsters ab und rutscht dir in ein Sumpfloch. Verzweifelt siehst du es versinken.
+
+An den stahlharten Schuppen zerbricht die Klinge wie morsches Holz.
+
+Nur ein Superman könnte so ein Untier mit den Händen erwürgen!
+
+Vorsichtig kletterst du an den Löchern hoch in die Baumkrone.
+
+Bedächtig hangelst du dich weiter hinab.
+
+Ich nehme keine Geschenke von einem Dieb!
+
+Das hast du nicht!
+
+An wen solltest du es denn verschenken?
+
+Du entfernst den Siegellack mit den Zähnen aus der Flasche. Milchig-weißer Rauch schießt heraus der sich zu einer Gestalt formt. Es ist ein Geist! Mit einem Wutschrei schleudert er die Flasche weit weg. Nur eine Vorsichtsmaßnahme! „Ich hatte mal einen angeheirateten Vetter der… Übrigens, wenn du mal Hilfe brauchen solltest, wende dich an mich, ja? Du kannst mir aber auch was schenken, denn kleine Geschenke erhalten die Freundschaft.“
+
+Das Wasser rinnt kühl durch deine Kehle. Plötzlich hast du das Gefühl, dass dein Kopf platzt. Als du dich im Wasser der Schale betrachtest, springst du entsetzt zurück: Zwei riesige Kiemenbüschel sind dir gewachsen. Die Kopfschmerzen lassen jedoch nach und du fühlst dich erfrischt und tatendurstig.
+
+Repetitia non placent!
+
+Du schluckst das salzige Meerwasser und erbrichst dich, von Krämpfen geschüttelt.
+
+Du hast sie bereits auf dem Kopf.
+
+Du hast sie jetzt auf dem Kopf.
+
+Womit denn, hä?
+
+Willst du mit Kanonen auf Spatzen schießen?
+
+Wo siehst du hier ein Ei? Hast du etwa schon Halluzinationen?
+
+Das ist nicht drin, du Vandale!
+
+Ich soll für dich suchen? Wer spielt denn hier, ich oder du?
+
+Du bist schon unten!
+
+Du tauchst ab, aber nach einigen Zügen geht dir die Luft aus, und du musst wieder auftauchen!
+
+Du bist schon oben, Transuse!
+
+AAAAAAAAAAAAAAAARGH!!!
+
+Huahuahua!
+
+Schluchz! Schnüff!
+
+Mit einem schaurigen Gebrüll stürzt sich der Troll über dich. Er ist dir an Kraft bei weitem überlegen und zerknackt dir mühelos das Genick…
+
+Der Fisch umschwimmt die Blüte und beäugt sie misstrauisch. Plötzlich schießt er vor und schnappt sie. Du starrst ihn fasziniert an: Sein Bauch glüht in einem flackernden Rot auf. Er zuckt krampfhat mit der Schwanzflosse und zerfällt zu Fischmehl, das langsam zu Boden sinkt. Vor Erleichterung stößt du einen tiefen Seufzer aus. Auf einmal erblickst du vor dir einen weißen Schimmer. Er geht von einem kleinen, blanken Ei aus, das zwischen dem Fischmehl liegt.
+
+Der Fisch umschwimmt dich in immer enger werdenden Kreisen. Er beißt sich in deinem Bein fest! Durch das Blut angelockt, schießen hunderte von kleinen, silbernen Blitzen auf dich zu. Die Fischschwärme lassen nicht viel von dir übrig…
+
+Das Sumpfwesen umschlingt dich mit seinen glitschigen Armen und zieht dich ins Moor, wo du elendig ersäufst.
+
+Der Geist erscheint. Wutentbrannt legt er die Flinte an und schießt auf das Monster. Mit lautem Getöse 
