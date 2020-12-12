@@ -64,7 +64,7 @@ Raumbeschreibung Moor:
 
 30: Du bist völlig im Nebel gefangen. Plötzlich siehst du aus dem Augenwinkel ein Licht aufblitzen. War es im Norden? Im Westen? Oder vielleicht im Osten oder Süden? Du weißt es nicht…
 
-29: Du arbeitest dich ,mühsam einige roh ausgehauene Steinstufen hinauf. Der Nebel wird hier oben lichter. Du erkennst nun, dass du auf einer großen Steinplatte stehst. Zu deinen Füßen liegt ein in dickes Leder eingebundenes Buch. Sein Rücken ist mit goldenen Ornamenten verziert. Es ist mit einer silbernen Kette an den Fels angeschlossen. Nach Norden, Westen und Süden fällt die Platte steil ab.
+29: Du arbeitest dich mühsam einige roh ausgehauene Steinstufen hinauf. Der Nebel wird hier oben lichter. Du erkennst nun, dass du auf einer großen Steinplatte stehst. Zu deinen Füßen liegt ein in dickes Leder eingebundenes Buch. Sein Rücken ist mit goldenen Ornamenten verziert. Es ist mit einer silbernen Kette an den Fels angeschlossen. Nach Norden, Westen und Süden fällt die Platte steil ab.
 
 Raumbeschreibung Berg:
 
@@ -82,7 +82,7 @@ Raumbeschreibung Berg:
 
 43: Im Westen ragt ein Berg auf, an dessen Wand sich in halber Höhe ein Pfad entlangschlängelt, der von Norden nach Süden verläuft. Im Süden erblickst du in der Schlucht eine blassgrüne Pflanze mit roten Blüten. Nördlich und östlich von dir setzt sich die Wiese fort.
 
-34: Hier liegen viele graufleckige Steine im Gras. Als du nach Westen siehst, erkennst du den Grund: eine Geröllhalde führt bergauf. Du kannst sie jedoch wegen der drohenden Gefahr eines Steinschlags nicht betreten. Stattdessen führt im Süden ein weg bergauf. Im Norden steigt eine smaragdgrüne, glatte Wand senkrecht in den Himmel. Im Osten liegt ein weiterer Teil der Wiese.
+34: Hier liegen viele graufleckige Steine im Gras. Als du nach Westen siehst, erkennst du den Grund: eine Geröllhalde führt bergauf. Du kannst sie jedoch wegen der drohenden Gefahr eines Steinschlags nicht betreten. Stattdessen führt im Süden ein Weg bergauf. Im Norden steigt eine smaragdgrüne, glatte Wand senkrecht in den Himmel. Im Osten liegt ein weiterer Teil der Wiese.
 
 33: Vorsichtig jeden Stein mit dem Fuß prüfend, tastest du dich einige Meter in die Geröllfläche hinein. Ein warnendes Rumpeln hinter dir lässt dich erstarren. Als du herumschnellst, lösen sich die Steine unter deinen Füßen. Sie fahren erst langsam, dann immer schneller zu Tal und reißen auf ihrem Weg andere mit sich. Wild schreiend saust du im Strom der Steine mit. Rasender Schmerz ergreift dich, als ein großer Granitklumpen deinen Schädel trifft. Rote Ringe kreisen vor deinen Augen, die aber schnell von einem alles beherrschenden Schwarz ausgelöscht werden…
 
@@ -178,14 +178,14 @@ Meer unter Wasser
 
 97: Genau im Süden ragt vor dir ein ungeheures Korallenriff hoch. Eine metergroße Muschel liegt vor deren Füßen auf dem Land. Es ist jedoch sinnlos, sie zu öffnen zu versuchen.
 
-99: Das Riff im Süden macht hier eine Kurve, sodass du auch im Osten nicht weiter kannst. Der mit Land bedeckte Meeresgrund führt jedoch im Norden auf den Strand.
+99: Das Riff im Süden macht hier eine Kurve, sodass du auch im Osten nicht weiter kannst. Der mit Sand bedeckte Meeresgrund führt jedoch im Norden auf den Strand.
 unter_wasser = -1, =0
 
 Du spannst den Hahn, zielst und drückst ab. Der rostige Schießprügel birst mit einem gewaltigen Knall. Du spürst einen stechenden Schmerz im Kopf – und dann nichts mehr.
 
 Beschreibungen:
 
-1: Es handelt sich um einen schmalen Goldring, der mit einem funkelnden Brillianten besetzt ist.
+1: Es handelt sich um einen schmalen Goldring, der mit einem funkelnden Brillanten besetzt ist.
 
 2: Die Flinte ist ziemlich verrostet. Auf dem Schaft sind prächtige Schnitzereien sichtbar. Eine Gravierung auf dem Lauf verrät dir, dass es sich um eine Produktion von Wesley & Lie. Sie ist übrigens geladen.
 
@@ -229,7 +229,7 @@ Du entfernst den Siegellack mit den Zähnen aus der Flasche. Milchig-weißer Rau
 
 Das Wasser rinnt kühl durch deine Kehle. Plötzlich hast du das Gefühl, dass dein Kopf platzt. Als du dich im Wasser der Schale betrachtest, springst du entsetzt zurück: Zwei riesige Kiemenbüschel sind dir gewachsen. Die Kopfschmerzen lassen jedoch nach und du fühlst dich erfrischt und tatendurstig.
 
-Repetitia non placent!
+Repetita non placent!
 
 Du schluckst das salzige Meerwasser und erbrichst dich, von Krämpfen geschüttelt.
 
@@ -261,10 +261,96 @@ Schluchz! Schnüff!
 
 Mit einem schaurigen Gebrüll stürzt sich der Troll über dich. Er ist dir an Kraft bei weitem überlegen und zerknackt dir mühelos das Genick…
 
-Der Fisch umschwimmt die Blüte und beäugt sie misstrauisch. Plötzlich schießt er vor und schnappt sie. Du starrst ihn fasziniert an: Sein Bauch glüht in einem flackernden Rot auf. Er zuckt krampfhat mit der Schwanzflosse und zerfällt zu Fischmehl, das langsam zu Boden sinkt. Vor Erleichterung stößt du einen tiefen Seufzer aus. Auf einmal erblickst du vor dir einen weißen Schimmer. Er geht von einem kleinen, blanken Ei aus, das zwischen dem Fischmehl liegt.
+Der Fisch umschwimmt die Blüte und beäugt sie misstrauisch. Plötzlich schießt er vor und schnappt sie. Du starrst ihn fasziniert an: Sein Bauch glüht in einem flackernden Rot auf. Er zuckt krampfhaft mit der Schwanzflosse und zerfällt zu Fischmehl, das langsam zu Boden sinkt. Vor Erleichterung stößt du einen tiefen Seufzer aus. Auf einmal erblickst du vor dir einen weißen Schimmer. Er geht von einem kleinen, blanken Ei aus, das zwischen dem Fischmehl liegt.
 
 Der Fisch umschwimmt dich in immer enger werdenden Kreisen. Er beißt sich in deinem Bein fest! Durch das Blut angelockt, schießen hunderte von kleinen, silbernen Blitzen auf dich zu. Die Fischschwärme lassen nicht viel von dir übrig…
 
 Das Sumpfwesen umschlingt dich mit seinen glitschigen Armen und zieht dich ins Moor, wo du elendig ersäufst.
 
-Der Geist erscheint. Wutentbrannt legt er die Flinte an und schießt auf das Monster. Mit lautem Getöse 
+Der Geist erscheint. Wutentbrannt legt er die Flinte an und schießt auf das Monster. Mit lautem Getöse explodiert das Schießeisen, Splitter fliegen umher. Das Monster sinkt mit schmerzverzerrter Miene ins Moorwasser zurück. Glücklich über deine Rettung bedankst du dich beim Geist. „Gern geschehen“, damit verschwindet er.
+
+Da du dich jedoch für die Klauenabdrücke interessierst, folgst du der ihrer Spur. Mit einem Mal weht dir heißer, fauliger Atem entgegen. Du hebst den Blick und ein Troll mit langem, verfilztem Fell und verzerrter Fratze wankt auf dich zu. Er beobachtet dich lauernd aus halb geschlossenen, tückischen Augen.
+
+Der massige Körper des Trolls liegt hier auf dem Boden. Vorsichtig steigst du über ihn hinweg.
+
+Du bemerkst eine heftige Bewegung des Schiffs. Die Schilfwand spaltet sich und ein Wesen tritt heraus, dessen grässliche Erscheinung zu beschreiben der Computer sich sträubt. Grünen Schleim sabbernd, schwabbelt es auf dich zu.
+
+Aus diesem Riff saust dir ein meterlanger, silbrig glänzender Fisch entgegen. In seinem Maul blinken Reihen von dreieckigen Zähnen.
+Halb im Sand vergraben liegt hier ein weiß blinkendes, kleines Ei.
+
+Der Geist bleibt unsichtbar. Du hörst nur ein beleidigtes „Hmmpff“.
+
+Der Geist erscheint und zuckt mit den Schultern. „Ich weiß leider keinen Rat mehr.“
+
+Der Geist erscheint in einer Wolke.
+
+„Ei? Das habe ich doch irgendwann schon mal gehört…“
+
+„Das Meer treibt vieles an…“
+
+„Es ist etwas in der Nähe mit dem du vielleicht dein Glück machen könntest…“
+
+„Eine Flinte ist eine gefährliche Waffe…“
+
+„Tödliche Gefahr lauert in der Nähe…“
+
+„Höhlen bergen gefährliche Fallen ebenso wie zauberische Orte und unschätzbare Hilfen…“
+
+Random
+
+„Vielleicht findest du in der Nähe einen nützlichen Gegenstand?“
+
+„Du solltest dir gerade jetzt mehr Mühe geben!“
+
+„Ich habe jetzt keine Zeit für dich! Wir feiern in Schottland ein Familienfest!“
+
+„Selbst Geister wissen nicht immer Rat!“
+
+„Du langweilst mich mit deiner ewigen Fragerei!“ Und er gähnt herzhaft.
+
+
+Hiermit verschwindet er.
+
+Zufallsanhängsel
+
+1: (NOT: Meer, Baumhaus) Ein süßes kleines, schwarz-weißes Kaninchen hüpft auf deinem Weg vorüber.
+
+2: (NOT: Moor, Meer) Leises Tappen von Füßen dringt an dein Ohr.
+
+3: (WIESE OR WALD) Aus dem hohen Gras lugen zwei lange, schwarze Öhrlein hervor, die sofort wieder verschwinden.
+
+4: (NOT: Höhle, Meer, Höhlenquelle) Ein plötzlicher Donnerschlag lässt dich zusammenfahren. Schon entlädt sich über dir ein Gewitterguss.
+
+5: (NOT: Meer, Höhle, Baumhaus, Höhlenquelle) Ein plötzlicher Windstoß weht dir die Kappe vom Kopf. (Kappe ablegen)
+
+6: (Meer AND not Unterwasser) Eine Möwe kreist unablässig über deinem Kopf.
+
+7: (Meer AND Unterwasser) Bunte Fischschwärme ziehen ruhig vorbei.
+
+8: (Wiese) Ein Schmetterling setzt sich auf deine Hand und breitet seine Flügel in die Sonne aus. Dann flattert er wieder davon.
+
+9: (Wald) Ein Eingeborener stürzt auf dich zu, murmelt etwas Unverständliches, legt etwas auf den Boden und verschwindet im Unterholz. Du betrachtest das Geschenk, {}.
+
+10: (Höhle AND NOT Höhlenquelle) Eine Ratte huscht quiekend an deinen Füßen vorbei.
+
+If mehr als 110 Befehle: 
+
+	Du hörst ein entferntes Grollen. Auf einmal schwankt der Boden unter dir.
+
+	If Beschreibung Meer: Eine Riesenwelle wirft dich aufs Land.
+
+	Ein klaffender Abgrund tut sich vor dir auf. Wasser strudelt um deine Füße
+	
+	If Beschreibung Höhle, Höhlenquelle: Ein zentimeterbreiter Riss läuft über die Decke. Tonnenschwere Felsbrocken ersticken deinen Schrei.
+
+	If Beschreibung Baumhaus: Du kannst dich nicht mehr halten und stürzt mit einem Aufschrei ab.
+
+Als die Ameisen deinen Schild wahrnehmen, flüchten sie von Panik ergriffen in ihren Bau.
+
+Tausende von Killerameisen überfluten dich. Glühende Nägel scheinen dir ins Fleisch getrieben zu werden, als sie dir Fleischstückchen aus dem Körper reißen. Mach einer halben Minute zeugt nur ein Skelett von dir.
+
+Du fühlst dich müde und ausgedörrt.
+
+Die Zunge liegt dir geschwollen im ausgetrockneten Mund. Du kannst dich nur noch taumelnd weiterschleppen.
+
+Du kannst nicht mehr und brichst zusammen. Langsam verlierst du das Bewusstsein.

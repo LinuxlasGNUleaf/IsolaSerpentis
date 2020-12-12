@@ -1,0 +1,24 @@
+R		Raumnummer
+BE$		Befehl
+SU$		Substantiv
+VE$		Verb
+MI$		Mittel
+00(0Z)		Raumnummer des Objekts
+DW$(0Z)		Messer, Flinte usw.
+0A$(0Z)		Akkusativartikel Objekt
+0B$(0Z)		Langbeschreibung Objekt
+FG!		-1 = hat Gepäck, 0 hat keins
+0Z		Zahl der Objekte
+BZ		Zähler für Befehle
+SL		Stelle des D in BE$ (?)
+GF(3)		Gefahr (0=keine, -1=beseitigt, 1=im Kampf)
+GB$		Gefahrenbeschreibung (1=lebend, 2=nach Tod)
+00(8) = -2	Geist raus, Flasche weg.
+00(8) = -3	Geist beleidigt
+TF!		Tauchfähig
+EV!		Ei vorhanden
+SZ		Schluchtzähler
+00(10)		Kappe aufgesetzt
+HZ		Hilfenzähler
+AZ		Abstiegszähler
+ZH$(5)		Zufallshilfen
