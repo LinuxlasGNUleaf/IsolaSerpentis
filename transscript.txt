@@ -31,6 +31,7 @@ Der in altertümlichen Buchstaben verfasste Text des Buches ist an vielen Stelle
 Wanderer, den es einst auf diese Insel verschlagen hat, höre diese Legende! Seit Urzeiten nagt die Schlange an den Grundfesten des Eilands. Doch jetzt hat das Eiland, das immer widerstehen konnte, seine ursprüngliche Kraft, neu aus sich selbst zu wachsen, verloren. Es gibt nur eine Möglichkeit, der Schlange das Leben zu entreißen: Ihr Lebensei muss zerstört werden. Obschon es ihre Lebensquelle ist, ist es doch nichts anderes als ein Ei: Errette die Insel von dieser Gefahr!
 
 Raumbeschreibungen:
+
 66: Du bahnst dir deine Weg durch den Urwald und bewunderst die wunderschönen Orchideen, die von den Bäumen herabhängen. Der Wald setzt nach Osten und Westen fort. Im Norden fällt der Boden steil zu einer Schlucht ab. Im Süden schimmert zwischen den Bäumen der cyanblaue Strand hervor.
 
 67: Du gehst durch den Wald und zerteilst die Lianenvorhänge mit den Händen. Große, fremdartig anmutende Insekten schwirren um dich herum. Im Norden blickst du in eine steile Schlucht. Nach Osten und Westen geht es tiefer in den Wald. Im Süden betrittst du einen Strand.
@@ -85,6 +86,88 @@ Raumbeschreibung Berg:
 
 33: Vorsichtig jeden Stein mit dem Fuß prüfend, tastest du dich einige Meter in die Geröllfläche hinein. Ein warnendes Rumpeln hinter dir lässt dich erstarren. Als du herumschnellst, lösen sich die Steine unter deinen Füßen. Sie fahren erst langsam, dann immer schneller zu Tal und reißen auf ihrem Weg andere mit sich. Wild schreiend saust du im Strom der Steine mit. Rasender Schmerz ergreift dich, als ein großer Granitklumpen deinen Schädel trifft. Rote Ringe kreisen vor deinen Augen, die aber schnell von einem alles beherrschenden Schwarz ausgelöscht werden…
 
-35: Buntschillernde Schmetterlinge taumeln von Blüte zu Blüte, um Nektar zu finden. Erinnerungen and deine Kindheit ergreifen dich. Ob es deinen Lieben wohl ebenso gut geht? Gen Norden blickend siehst du eine grüne Steinwand mit einem schmalen Loch, ungefähr in 3 Fuß Höhe. Ein Mensch könnte sich vielleicht hindurchzwängen. Ansonsten breitet sich die Wiese um dich aus wie ein Teppich.
+35: Buntschillernde Schmetterlinge taumeln von Blüte zu Blüte, um Nektar zu finden. Erinnerungen an deine Kindheit ergreifen dich. Ob es deinen Lieben wohl ebenso gut geht? Gen Norden blickend siehst du eine grüne Steinwand mit einem schmalen Loch, ungefähr in 3 Fuß Höhe. Ein Mensch könnte sich vielleicht hindurchzwängen. Ansonsten breitet sich die Wiese um dich aus wie ein Teppich.
 
 36: Die Pflanzen scheinen hier kürzlich niedergetrampelt worden zu sein, als ob ein Wesen von ungeheurer Größe hinübergegangen sei. Aber wo sollte es hergekommen sein, da sich doch sonst keine Spuren zeigen? Im Norden liegt eine grüne Steinwand, von dort kam es also nicht! Geben dir vielleicht die Wiesenstücke in der anderen Richtung Aufschluss?
+
+37: Zwischen dem Gras und Blumen siehst du große, von Moos bedeckte Stellen. Nach Osten hin verbinden sich diese Flecken zu einer geschlossenen Fläche. Im Norden liegt gar ein Tümpel, der dich mit seiner schlammigen Oberfläche an die todbringenden Sümpfe deiner Heimat erinnert. Im Süden fallen die Steilwände der Schlucht ab. Es bleibt noch der Weg nach Westen, zurück auf die Wiese.
+
+Raumbeschreibungen Schlucht
+
+48: Du stehst auf dem Boden einer Schlucht, die in Ost-West-Richtung verläuft. Die Luft ist staubtrocken und glühend heiß. Du fühlst dich etwas schwindlig. Vielleicht solltest du doch besser im Süden den Wald hochklettern.
+
+49: Der einzige Ausgang liegt im Westen. Alle anderen Richtungen werden durch senkrecht hochsteigende Felswände begrenzt. Unter einer Felsscholle wartet ein großer, schwarzer Skorpion bewegungslos auf Beute. Vorsichtshalber wagst du dich nicht näher heran.
+
+47: Die aus dem Osten kommende Schlucht macht hier einen Knick nach Süden. Im Westen führt ein überhängender Grat an einer Seite empor. Die Wand im Norden glimmt im Sonnenglast.
+
+57: Aus einer Felsspalte starrt dich ein Vipernkopf mit kalten Reptilienaugen an. Bei deinem Näherkommen verschwindet sie in ihrem Loch. Trotzdem ist dir dieser Ort nicht ganz geheuer. Du solltest besser nach Norden oder Westen gehen. Eine andere Möglichkeit bleibt dir nicht.
+
+56: Die Schlucht verläuft schnurgerade in West-Ost-Richtung. In Westen siehst du eine gigantische Pflanze mit roten Kelchblüten. Ansonsten lässt sich nicht besonderes erkennen.
+
+55: Hier hast du das Westende der Schlucht erreicht, das sich in Nichts von den anderen Teilen der Schlucht unterscheidet – abgesehen von dem riesigen Feigenkaktus, der vor dir in den Himmel ragt. Er ist mit dolchartigen Stacheln übersät. Hoch oben siehst du einige Blüten, aus denen giftig aussehender Nektar tropft.
+
+Höhle
+
+25: Die Wände strahlen ein weiches, grünes Leuchten aus. Du stehst in einem abgeknickten Gang, der von Norden kommt und nach Westen weiterführt. Nach Süden trittst du hinaus auf die Wiese.
+
+15: Du befindest dich in einem Nord-Süd-Gang, der nach Osten abzweigt. Von irgendwoher hörst du das monotone Tropfen von Wasser.
+
+16: Aus den Wänden wachsen bizarre Kristalle von erstaunlicher Größe hervor. Du versinkst in ihrem Anblick, reißt dich aber schließlich wieder los und schlägst entweder den Weg nach Westen oder den nach Süden ein.
+
+26: Du merkst jetzt, dass du in eine Sackgasse gekommen bist. Von fern her hörst du verhaltenes Kichern und das Leuchten der Wände flackert höhnisch. Dir bleibt nur der Weg nach Norden.
+
+5: Der von Süden kommende Gang gabelt sich hier nach Westen und Osten. Du musst dich entscheiden…
+
+6: Du gelangst in ein totes Ende des von Westen kommenden Ganges. Plötzlich fährst du zusammen! Dröhnendes Gelächter erklingt, läuft durch die Gänge und bricht sich in unzähligen Echos.
+
+4: Der von Osten kommende Gang, in dem du stehst, setzt sich nach Westen fort.
+
+3: Bumms! In deinem Eifer bist du vor die den Gang abschließende Wand gelaufen. Stöhnend reibst du dir den schmerzenden Schädel, als ein Irrlicht aus der Wand rollt. Langsam tanzt es vor deinen Augen hin und her und löst sich schließlich auf…
+
+24: Ein Weg führt nach Westen und Osten. Du vermeinst, ferne Musik zu hören.
+
+23: Von Norden her dringt süßlicher Verwesungsgeruch in deine Nase. Du kannst ihm nachgehen oder den Weg nach Osten einschlagen.
+
+13: Du watest durch eine zentimeterdicke Schicht von Staub, Lumpen, Knochen und Abfall. Angeekelt blickst du dich um. In der Mitte des Ganges steht ein aus Knochen verfertigter Tisch mit einem ebensolchen Stuhl. Auf dem Tisch liegen Reste angefaulter Fleischbrocken, die einen abstoßenden Geruch verströmen. Im Moder auf dem Fußboden kannst du Klauenabdrücke erkennen, deren Größe dich erschreckt. Mit Ausnahme von Norden, wo dir eine wand den Weg versperrt, kannst du in alle Richtungen gehen.
+
+14: Du befindest dich in einem toten Ende, das mit Beuteüberresten schrecklich übersät ist. Vielleicht war es die Speisekammer des Monsters?
+
+12: Du gehst durch eine Ost-West-Passage, die noch durch den Schmutz des Monsters gekennzeichnet ist.
+
+11: In die westliche Wand ist ein Pfeil eingemeißelt, der in den Gang nach Norden weist. Hat ein freundliches Wesen dir einen Fingerzeig gegeben, oder ist es eine tödliche Falle? Du hast freilich auch die Möglichkeit, nach Süden oder Osten zu gehen.
+
+1: Auch hier findet sich ein Pfeil. Er zeigt jedoch nach Osten. Ein weiterer Gang liegt im Süden.
+
+2: „Reingefallen!“ schallt dir entgegen. Verwundert siehst du dich um. Von woher kann die Stimme gekommen sein? Überall schimmern die grünen Wände, und von Westen bist du ja gekommen. Sollte dir jemand (oder etwas) gefolgt sein?
+
+21: Hier ist wieder ein Pfeil zu sehen. Willst du ihm nach Osten folgen oder Richtung Norden gehen?
+
+22: Du stehst vor zwei Wänden im Norden und Osten. Ein Gang führt nach Westen. Im Süden lastet ägyptische Finsternis, aus der du das leise Rauschen von Wasser zu hören ist.
+
+32: Du gehst durch einen engen Durchgang und bleibst wie gebannt stehen. In der Dunkelheit schwebt eine dunkelrot glühende Schale, in die von irgendwoher ein Wasserstrahl hineinplätschert. Das rote Licht bricht sich in den sprühenden Wassertropfen und lässt sie zu glitzernden Edelsteinen werden. Allmählich erkennst du, dass du dich in einem kleinen Raum befindest. Aus der gegenüberliegenden Wand schießt der Wasserstrahl hervor. Über ihm kannst du in goldenen Lettern lesen: „Aqua Spirantis“
+
+Meer über Wasser
+
+Allgemein(zuerst): Du plätscherst fröhlich in den erfrischenden Fluten des Meeres.
+
+86: Im Norden und Westen liegt der Strand.
+
+96: Im Westen liegt der Strand, im Süden versperrt dir ein Korallenriff den Weg.
+
+87: Im Norden liegt der Strand.
+
+88: Im Norden und Osten liegt der Strand.
+
+97: Im Süden ragt ein scharfkantiges Korallenriff hoch.
+
+98: Im Süden versperrt dir ein unbesteigbares Riff den Weg.
+
+99: Das Korallenriff versperrt dir den Weg nach Süden und Osten. Im Norden liegt der Strand.
+
+Meer unter Wasser
+
+86: Du befindest dich knapp unter der Wasseroberfläche und stehst auf einer nach Süden hin abfallenden Sandfläche. Nach Norden und Westen geht es auf den Strand hinauf. Ein Kugelfisch schwimmt an dir vorbei.
+
+87: Der Boden ist hier knöcheltief mit Tang bedeckt, der deine Füße umfließt. Nach Norden geht es zum Strand, nach Süden, Osten und Westen tiefer ins Meer.
+
+88: Seeanemonen erfreuen deine Augen mit ihren exotischen Farben. Nach Norden und Osten gelangt man auf den Strand.
