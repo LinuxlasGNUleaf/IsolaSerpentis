@@ -74,13 +74,13 @@ Raumbeschreibung Berg:
 
 53: Vor dir ragt ein mächtiger alter Baumriese mit rauer, rissiger Rinde auf. Du bist erstaunt, in dieser kargen Gegend eine so große Pflanze zu finden. Bei näherer Betrachtung findest du einige ausgehauene Löcher im Stamm, die vielleicht als Tritte gedient haben könnten…? Von hier aus hast du einen weiten Ausblick: Im Süden und Westen liegt tief unter dir dichter Urwald. Der von Osten kommende Pfad macht hier einen Knick nach Norden.
 
-42: Du befindest dich auf einem schwarzen Felsplateau. Die Aussicht ist überwältigend. Unter dir im Westen erstreckt sich Urwald bis zum Horizont. Nach Osten siehst du den Felsbrocken, der dir so bedrohlich vorkam. Weiter hinten liegt die Wiese im Tale. Im Norden geht es einen mit Geröll bedeckten Hang bergab, der in leichten Kurven auf die Wiese im Nordosten führt. Er lässt sich allerdings nicht begehen ohne einen Steinschlag auszulösen. Über dir im grenzenlosen Blau des Himmels schweben einige kleine Punkte ziellos dahin.
+43: Du befindest dich auf einem schwarzen Felsplateau. Die Aussicht ist überwältigend. Unter dir im Westen erstreckt sich Urwald bis zum Horizont. Nach Osten siehst du den Felsbrocken, der dir so bedrohlich vorkam. Weiter hinten liegt die Wiese im Tale. Im Norden geht es einen mit Geröll bedeckten Hang bergab, der in leichten Kurven auf die Wiese im Nordosten führt. Er lässt sich allerdings nicht begehen ohne einen Steinschlag auszulösen. Über dir im grenzenlosen Blau des Himmels schweben einige kleine Punkte ziellos dahin.
 
 62: Die Steiglöcher führen zu einem kleinen Baumhaus, das dicht an den mächtigen Stamm angeschmiegt ist. Die Krone des Baumes bildet das Dach. Du trittst ein. Die Möbelstücke, ein Bett, ein Tisch mit einem Stuhl und ein kleiner Hocker sind wahllos über den Raum verstreut und umgestürzt. Hat hier ein Kampf stattgefunden?
 
 46: Du gehst über eine Sommerwiese. Der Boden federt unter deinen Füßen leicht. Die Wiese ist übersät mit Kräutern und Blumen, die du noch nie in deinem Leben gesehen hast. In die Schlucht im Osten führt ein schmaler Weg. Im Süden kannst du nicht in sie herabsteigen. Die Wiese erstreckt sich in die anderen Richtungen.
 
-43: Im Westen ragt ein Berg auf, an dessen Wand sich in halber Höhe ein Pfad entlangschlängelt, der von Norden nach Süden verläuft. Im Süden erblickst du in der Schlucht eine blassgrüne Pflanze mit roten Blüten. Nördlich und östlich von dir setzt sich die Wiese fort.
+45: Im Westen ragt ein Berg auf, an dessen Wand sich in halber Höhe ein Pfad entlangschlängelt, der von Norden nach Süden verläuft. Im Süden erblickst du in der Schlucht eine blassgrüne Pflanze mit roten Blüten. Nördlich und östlich von dir setzt sich die Wiese fort.
 
 34: Hier liegen viele graufleckige Steine im Gras. Als du nach Westen siehst, erkennst du den Grund: eine Geröllhalde führt bergauf. Du kannst sie jedoch wegen der drohenden Gefahr eines Steinschlags nicht betreten. Stattdessen führt im Süden ein Weg bergauf. Im Norden steigt eine smaragdgrüne, glatte Wand senkrecht in den Himmel. Im Osten liegt ein weiterer Teil der Wiese.
 
@@ -140,7 +140,7 @@ Höhle
 
 2: „Reingefallen!“ schallt dir entgegen. Verwundert siehst du dich um. Von woher kann die Stimme gekommen sein? Überall schimmern die grünen Wände, und von Westen bist du ja gekommen. Sollte dir jemand (oder etwas) gefolgt sein?
 
-21: Hier ist wieder ein Pfeil zu sehen. Willst du ihm nach Osten folgen oder Richtung Norden gehen?
+21: Hier ist wieder ein Pfeil zu sehen. Willst du ihm nach Norden folgen oder in östlicher Richtung weitergehen?
 
 22: Du stehst vor zwei Wänden im Norden und Osten. Ein Gang führt nach Westen. Im Süden lastet ägyptische Finsternis, aus der du das leise Rauschen von Wasser zu hören ist.
 
