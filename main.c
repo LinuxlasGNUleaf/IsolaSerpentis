@@ -10,7 +10,7 @@
 #endif
 
 const int max_line_length = 120;
-const int standard_reading_tempo = 14;
+const int standard_reading_tempo = 10;
 
 void os_wait(int ms)
 {
@@ -27,72 +27,71 @@ void fancy_print(char str[], int len, int ms, bool auto_line_break)
     int next_possible_break = 0;
     for (int i = 0; i<len; i++)
     {
-        if (auto_line_break && i >= next_possible_break && i < len-1)
+        if (auto_line_break && i >= next_possible_break  && i < len-1)
         {
-            if (i > last_line_break+max_line_length)
+            for (int j = i; j < len-1; j++)
             {
-                printf("\n");
-                fflush(stdout);
-                last_line_break = i;
-                if (str[i] == ' ')
-                    i += 1;
-            }
-            else
-            {
-                for (int k = i; k < len-1; k++)
+                if (str[j] == ' ')
                 {
-                    if (str[k] == ' ')
+                    if (j > last_line_break+max_line_length)
                     {
-                        next_possible_break = k;
-                        break;
+                        printf("\n");
+                        fflush(stdout);
+                        last_line_break = i;
                     }
+                    next_possible_break = j;
+                    break;
                 }
             }
         }
         printf("%c",str[i]);
         fflush(stdout);
-        int breaker_stat = 0;
-        for (int k = 0; k < sizeof(breakers); k++)
+        if (auto_line_break)
         {
-            if (str[i] == breakers[k])
-                breaker_stat = 2;
-        }
-        if (breaker_stat == 0)
-        {
+            for (int k = 0; k < sizeof(breakers); k++)
+            {
+                if (str[i] == breakers[k])
+                {
+                    os_wait(ms*24);
+                    break;
+                }
+            }
             for (int k = 0; k < sizeof(half_breakers); k++)
             {
                 if (str[i] == half_breakers[k])
-                    breaker_stat = 1;
+                {
+                    os_wait(ms*9);
+                    break;
+                }
             }
         }
-        if (auto_line_break && breaker_stat != 0)
-        {
-            if (breaker_stat == 1)
-                os_wait(ms*10);
-            else if (breaker_stat == 2)
-                os_wait(ms*35);
-            continue;
-        }
-        else
-            os_wait(ms);
+        os_wait(ms);
     }
+    printf("\n");
 }
 
 void start_seq()
 {
-    fancy_print(title, sizeof(title), 4, false);
+    fancy_print(title, sizeof(title), 3, false);
     printf("Drücke ENTER, um zu starten.");
     getchar();
-    printf("\n\n");
+    printf("\n");
     fancy_print(intro1, sizeof(intro1), standard_reading_tempo, true);
-    printf("Drücke ENTER, um weiterzufahren.");
+    printf("Drücke ENTER, um fortzufahren.");
     getchar();
-    printf("\n\n");
+    printf("\n");
     fancy_print(intro2, sizeof(intro2), standard_reading_tempo, true);
+    printf("Drücke ENTER, um fortzufahren.");
+    getchar();
+    fancy_print(intro3, sizeof(intro3), standard_reading_tempo, true);
 }
 
 int main()
 {
     start_seq();
+    bool game = true
+    while(game){ //main loop
+
+    }
     return 0;
 }
