@@ -53,3 +53,9 @@ dkms.conf
 
 # Binaries
 bin/
+
+# Autosaves
+*.save
+
+# Layouts
+*.layout
