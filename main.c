@@ -89,9 +89,11 @@ void start_seq()
 int main()
 {
     start_seq();
-    bool game = true
-    while(game){ //main loop
-
+    bool game = true;
+    int room_ind = 77;
+    while(game)  //main loop
+    {
+        printf("%s\n", rooms[room_ind-1]);
     }
     return 0;
 }
