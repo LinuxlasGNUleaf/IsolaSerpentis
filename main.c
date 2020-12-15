@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "texts.h"
+#include <ctype.h>
+#include <string.h>
 
 #ifdef _WIN32
 #include <windows.h>
@@ -11,6 +13,9 @@
 
 const int max_line_length = 120;
 const int standard_reading_tempo = 10;
+const char commands[5][20]= {"gehe","nehme","lege","",""};
+
+int room_ind = 77;
 
 void os_wait(int ms)
 {
@@ -21,8 +26,9 @@ void os_wait(int ms)
 #endif
 }
 
-void fancy_print(char str[], int len, int ms, bool auto_line_break)
+void fancy_print(char str[], int ms, bool auto_line_break)
 {
+    int len = strlen(str);
     int last_line_break = 0;
     int next_possible_break = 0;
     for (int i = 0; i<len; i++)
@@ -72,28 +78,102 @@ void fancy_print(char str[], int len, int ms, bool auto_line_break)
 
 void start_seq()
 {
-    fancy_print(title, sizeof(title), 3, false);
+    fancy_print(title, 3, false);
     printf("Drücke ENTER, um zu starten.");
     getchar();
     printf("\n");
-    fancy_print(intro1, sizeof(intro1), standard_reading_tempo, true);
+    fancy_print(intro1, standard_reading_tempo, true);
     printf("Drücke ENTER, um fortzufahren.");
     getchar();
     printf("\n");
-    fancy_print(intro2, sizeof(intro2), standard_reading_tempo, true);
+    fancy_print(intro2, standard_reading_tempo, true);
     printf("Drücke ENTER, um fortzufahren.");
     getchar();
-    fancy_print(intro3, sizeof(intro3), standard_reading_tempo, true);
+    fancy_print(intro3, standard_reading_tempo, true);
 }
 
+void handle_command()
+{
+    char command[20];
+    char attribute[20];
+    printf("Eingabe: ");
+    scanf("%s %s",command, attribute);
+
+    for (int i = 0; i < 20; i++)
+        command[i] = tolower(command[i]);
+    for (int i = 0; i < 20; i++)
+        attribute[i] = tolower(attribute[i]);
+
+    if (!strcmp(command,"gehe"))
+    {
+        char direction[4];
+        strcpy(direction,rooms_directions[room_ind-1]);
+
+        if (!strcmp(attribute,"norden"))
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (direction[i] == 'n')
+                {
+                    room_ind -= 10;
+                    fancy_print("Du gehst nach Norden.\n", standard_reading_tempo, true);
+                    return;
+                }
+            }
+        }
+        else if (!strcmp(attribute,"osten"))
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (direction[i] == 'n')
+                {
+                    room_ind += 1;
+                    fancy_print("Du gehst nach Norden.\n", standard_reading_tempo, true);
+                    return;
+                }
+            }
+        }
+        else if (!strcmp(attribute,"westen"))
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (direction[i] == 'n')
+                {
+                    room_ind -= 1;
+                    fancy_print("Du gehst nach Norden.\n", standard_reading_tempo, true);
+                    return;
+                }
+            }
+        }
+        else if (!strcmp(attribute,"süden"))
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                if (direction[i] == 'n')
+                {
+                    room_ind += 10;
+                    fancy_print("Du gehst nach Süden.\n", standard_reading_tempo, true);
+                    return;
+                }
+            }
+        }
+        else
+        {
+            fancy_print("Hm... diese Richtung kenne ich nicht...\n", standard_reading_tempo, true);
+        }
+        fancy_print("Dieser Weg steht dir nicht offen.\n", standard_reading_tempo, true);
+    }
+}
+
+bool game = true;
 int main()
 {
     start_seq();
-    bool game = true;
-    int room_ind = 77;
+
     while(game)  //main loop
     {
-        printf("%s\n", rooms[room_ind-1]);
+        handle_command();
+        fancy_print(rooms[room_ind-1], standard_reading_tempo, true);
     }
     return 0;
 }

@@ -12,7 +12,7 @@
 
 99: Das Riff im Süden macht hier eine Kurve, sodass du auch im Osten nicht weiter kannst. Der mit Sand bedeckte Meeresgrund führt jedoch im Norden auf den Strand.
 
-Du stehst auf einem weiten Sandstrand. Einige zehn Meter hinter dir, im Süden, bricht sich die Brandung auf dem Strand. Im Norden siehst du einen dichten Palmenwald, der wie eine grüne Wand zum wolkenlosen Himmel emporragt. Der Strand, auf dem du stehst, setzt sich nach Osten und Westen fort. Als du den Strand näher betrachtest erkennst du, dass du dich in einer Zone von angeschwemmten Holz und Tang befindest: könnte das die Hochwasserlinie sein? Dann wärst du angespült worden…
+"Du stehst auf einem weiten Strand der aus Myriaden von kleinen violett glänzenden Muschelschalen besteht. Er setzt sich nach Osten und Westen fort. Einige zehn Meter im Süden siehst du das spiegelglatte Meer. Nördlich von dir ragt die dichtgeschlossene Wand eines türkisgrünen Waldes zum glühenden Himmel auf. Nur an einigen Stellen scheinen die Lianen einen schmalen Durchgang zu gewähren.\n";
 
 Du spannst den Hahn, zielst und drückst ab. Der rostige Schießprügel birst mit einem gewaltigen Knall. Du spürst einen stechenden Schmerz im Kopf – und dann nichts mehr.
 
@@ -112,7 +112,7 @@ Da du dich jedoch für die Klauenabdrücke interessierst, folgst du der ihrer Sp
 
 Der massige Körper des Trolls liegt hier auf dem Boden. Vorsichtig steigst du über ihn hinweg.
 
-Du bemerkst eine heftige Bewegung des Schiffs. Die Schilfwand spaltet sich und ein Wesen tritt heraus, dessen grässliche Erscheinung zu beschreiben der Computer sich sträubt. Grünen Schleim sabbernd, schwabbelt es auf dich zu.
+Du bemerkst eine heftige Bewegung des Schilfs. Die Schilfwand spaltet sich und ein Wesen tritt heraus, dessen grässliche Erscheinung zu beschreiben der Computer sich sträubt. Grünen Schleim sabbernd, schwabbelt es auf dich zu.
 
 Aus diesem Riff saust dir ein meterlanger, silbrig glänzender Fisch entgegen. In seinem Maul blinken Reihen von dreieckigen Zähnen.
 Halb im Sand vergraben liegt hier ein weiß blinkendes, kleines Ei.

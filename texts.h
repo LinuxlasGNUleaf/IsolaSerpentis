@@ -15,12 +15,13 @@ Y888888P `8888Y'  `Y88P'  Y88888P YP   YP     `8888Y' Y88888P 88   YD 88      Y8
 
 char intro1[] = "Du befindest dich an Bord deines Fischerbootes auf hoher See. Während deine zum Trocknen aufgehängte Netze in der Abendbrise schaukeln, liegst du im Bug deines Schiffes, schaust in die untergehende Sonne und denkst an dein zu Hause zurückgebliebene Familie. Die Wellen schlagen leise an den Schiffsrumpf. Allmählich fühlst du, wie du von einer wohligen Müdigkeit umfangen wirst. In einen tiefen, traumlosen Schlaf hinübergleitend, hörst du noch das leise Säuseln des Windes...\n";
 char intro2[] = "Du versuchst deine Augen zu öffnen, musst sie aber sofort geblendet wieder schließen. Du fühlst dich wie zerschlagen. Die Augen mit der Hand bedeckend blinzelst du in die gleißende Sonne und versuchst mühsam, dich aufzurappeln. Taumelnd kommst du wieder auf die Beine und blickst dich verstört um:\n";
-char intro3[] = "Du stehst auf einem weiten Strand der aus Myriaden von kleinen violett glänzenden Muschelschalen besteht. Er setzt sich nach Osten und Westen fort. Einige zehn Meter im Süden siehst du das spiegelglatte Meer. Nördlich von dir ragt die dichtgeschlossene Wand eines türkisgrünen Waldes zum glühenden Himmel auf. Nur an einigen Stellen scheinen die Lianen einen schmalen Durchgang zu gewähren.\n";
+char intro3[] = "Du stehst auf einem weiten Sandstrand. Einige zehn Meter hinter dir, im Süden, bricht sich die Brandung auf dem Strand. Im Norden siehst du einen dichten Palmenwald, der wie eine grüne Wand zum wolkenlosen Himmel emporragt. Der Strand, auf dem du stehst, setzt sich nach Osten und Westen fort. Als du den Strand näher betrachtest erkennst du, dass du dich in einer Zone von angeschwemmten Holz und Tang befindest: könnte das die Hochwasserlinie sein? Dann wärst du angespült worden...\n";
+
 
 char half_breakers[] = ",;";
 char breakers[] = ".:";
 
-char rooms[100][712] = {\
+char rooms[][575] = {\
 "Auch hier findet sich ein Pfeil. Er zeigt jedoch nach Osten. Ein weiterer Gang liegt im Süden.",
 "„Reingefallen!“ schallt dir entgegen. Verwundert siehst du dich um. Von woher kann die Stimme gekommen sein? Überall schimmern die grünen Wände, und von Westen bist du ja gekommen. Sollte dir jemand (oder etwas) gefolgt sein?",
 "Bumms! In deinem Eifer bist du vor die den Gang abschließende Wand gelaufen. Stöhnend reibst du dir den schmerzenden Schädel, als ein Irrlicht aus der Wand rollt. Langsam tanzt es vor deinen Augen hin und her und löst sich schließlich auf...",
