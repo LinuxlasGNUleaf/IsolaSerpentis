@@ -11,20 +11,28 @@
 #include <unistd.h>
 #endif
 
+#define DEBUG 1
+
 const int max_line_length = 120;
 const int standard_reading_tempo = 10;
+const int slow_reading_tempo = 3;
 const char commands[5][20]= {"gehe","nehme","lege","",""};
 
 int room_ind = 77;
+int last_room;
+bool underwater = false;
 
+#ifdef _WIN32
 void os_wait(int ms)
 {
-#ifdef _WIN32
     Sleep(ms);
-#else
-    usleep(ms*1000);
-#endif
 }
+#else
+void os_wait(int ms)
+{
+    usleep(ms*1000);
+}
+#endif
 
 void fancy_print(char str[], int ms, bool auto_line_break)
 {
@@ -73,12 +81,11 @@ void fancy_print(char str[], int ms, bool auto_line_break)
         }
         os_wait(ms);
     }
-    printf("\n");
 }
 
 void start_seq()
 {
-    fancy_print(title, 3, false);
+    fancy_print(title, slow_reading_tempo, false);
     printf("Drücke ENTER, um zu starten.");
     getchar();
     printf("\n");
@@ -96,7 +103,7 @@ void handle_command()
 {
     char command[20];
     char attribute[20];
-    printf("Eingabe: ");
+    fancy_print("Eingabe: ", standard_reading_tempo, true);
     scanf("%s %s",command, attribute);
 
     for (int i = 0; i < 20; i++)
@@ -106,74 +113,124 @@ void handle_command()
 
     if (!strcmp(command,"gehe"))
     {
-        char direction[4];
-        strcpy(direction,rooms_directions[room_ind-1]);
+        last_room = room_ind;
 
         if (!strcmp(attribute,"norden"))
         {
             for (int i = 0; i < 4; i++)
-            {
-                if (direction[i] == 'n')
-                {
+                if (rooms_directions[room_ind-1][i] == 'n')
                     room_ind -= 10;
-                    fancy_print("Du gehst nach Norden.\n", standard_reading_tempo, true);
-                    return;
-                }
-            }
         }
         else if (!strcmp(attribute,"osten"))
         {
             for (int i = 0; i < 4; i++)
-            {
-                if (direction[i] == 'n')
-                {
+                if (rooms_directions[room_ind-1][i] == 'n')
                     room_ind += 1;
-                    fancy_print("Du gehst nach Norden.\n", standard_reading_tempo, true);
-                    return;
-                }
-            }
         }
         else if (!strcmp(attribute,"westen"))
         {
             for (int i = 0; i < 4; i++)
-            {
-                if (direction[i] == 'n')
-                {
+                if (rooms_directions[room_ind-1][i] == 'n')
                     room_ind -= 1;
-                    fancy_print("Du gehst nach Norden.\n", standard_reading_tempo, true);
-                    return;
-                }
-            }
         }
         else if (!strcmp(attribute,"süden"))
         {
             for (int i = 0; i < 4; i++)
-            {
-                if (direction[i] == 'n')
-                {
+                if (rooms_directions[room_ind-1][i] == 'n')
                     room_ind += 10;
-                    fancy_print("Du gehst nach Süden.\n", standard_reading_tempo, true);
-                    return;
-                }
-            }
+        }
+        else if (last_room == room_ind)
+        {
+            fancy_print("Dieser Weg steht dir nicht offen.\n", standard_reading_tempo, true);
         }
         else
         {
-            fancy_print("Hm... diese Richtung kenne ich nicht...\n", standard_reading_tempo, true);
+            fancy_print("Hm... diese Richtung kenne ich nicht... probiers mal mit Norden, Osten, Süden oder Westen.\n", standard_reading_tempo, true);
+            return;
         }
-        fancy_print("Dieser Weg steht dir nicht offen.\n", standard_reading_tempo, true);
     }
+}
+
+void print_description()
+{
+    if (biome[room_ind-1] == 'h') fancy_print("HÖHLE\n", slow_reading_tempo, true);
+    else if (biome[room_ind-1] == 's') fancy_print("SUMPF\n", slow_reading_tempo, true);
+    else if (biome[room_ind-1] == 'n') fancy_print("NEBEL\n", slow_reading_tempo, true);
+    else if (biome[room_ind-1] == 'b') fancy_print("GEBIRGE\n", slow_reading_tempo, true);
+    else if (biome[room_ind-1] == 'w') fancy_print("WIESE\n", slow_reading_tempo, true);
+    else if (biome[room_ind-1] == 'c') fancy_print("SCHLUCHT\n", slow_reading_tempo, true);
+    else if (biome[room_ind-1] == 'a') fancy_print("BAUMHAUS\n", slow_reading_tempo, true);
+    else if (biome[room_ind-1] == 'l') fancy_print("WALD\n", slow_reading_tempo, true);
+    else if (biome[room_ind-1] == 't') fancy_print("STRAND\n", slow_reading_tempo, true);
+    else if (biome[room_ind-1] == 'm') fancy_print("MEER\n", slow_reading_tempo, true);
+    else if (biome[room_ind-1] == 'q') fancy_print("HÖHLENQUELLE\n", slow_reading_tempo, true);
+    else fancy_print("Fehler! Unbekanntes Gebiet!\n", standard_reading_tempo, true);
+
+    os_wait(200);
+    fancy_print(rooms[room_ind-1], standard_reading_tempo, true);
+
+    switch(rand()%10){
+        case 0:
+            if (biome[room_ind-1] != 'm' && biome[room_ind-1] != 'a')
+                fancy_print(zufallsanhaenge[0], standard_reading_tempo, true);
+            break;
+        case 1:
+            if (biome[room_ind-1] != 'm' && biome[room_ind-1] != 's')
+                fancy_print(zufallsanhaenge[1], standard_reading_tempo, true);
+            break;
+        case 2:
+            if (biome[room_ind-1] == 'w' || biome[room_ind-1] == 'l')
+                fancy_print(zufallsanhaenge[2], standard_reading_tempo, true);
+            break;
+        case 3:
+            if (biome[room_ind-1] != 'm' && biome[room_ind-1] != 'h' && biome[room_ind-1] != 'q')
+                fancy_print(zufallsanhaenge[3], standard_reading_tempo, true);
+            break;
+        case 4:
+            if (biome[room_ind-1] != 'm' && biome[room_ind-1] != 'h' && biome[room_ind-1] != 'q' && biome[room_ind-1] != 'a')
+                fancy_print(zufallsanhaenge[4], standard_reading_tempo, true);
+            // TODO (jakob#1#): Kappe ablegen
+            break;
+        case 5:
+            if (biome[room_ind-1] == 'm' && !underwater)
+                fancy_print(zufallsanhaenge[5], standard_reading_tempo, true);
+            break;
+        case 6:
+            if (biome[room_ind-1] == 'm' && underwater)
+                fancy_print(zufallsanhaenge[6], standard_reading_tempo, true);
+            break;
+        case 7:
+            if (biome[room_ind-1] == 'w')
+                fancy_print(zufallsanhaenge[7], standard_reading_tempo, true);
+            break;
+        case 8:
+            if (biome[room_ind-1] == 'l')
+                fancy_print(zufallsanhaenge[8], standard_reading_tempo, true);
+            // TODO (jakob#1#): zufälliges Item geben
+            break;
+        case 9:
+            if (biome[room_ind-1] == 'h')
+                fancy_print(zufallsanhaenge[9], standard_reading_tempo, true);
+            break;
+    };
+    printf("\n");
 }
 
 bool game = true;
 int main()
 {
-    start_seq();
+    time_t t;
+    srand((unsigned) time(&t));
+    if (!DEBUG)
+        start_seq();
 
     while(game)  //main loop
     {
         handle_command();
-        fancy_print(rooms[room_ind-1], standard_reading_tempo, true);
+        if (room_ind != last_room)
+        {
+            print_description();
+        }
     }
     return 0;
 }

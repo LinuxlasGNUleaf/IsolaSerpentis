@@ -13,15 +13,15 @@ Y888888P `8888Y'  `Y88P'  Y88888P YP   YP     `8888Y' Y88888P 88   YD 88      Y8
 ||Jakob Weiß                        ||\n\
 \\\\==================================//\n";
 
-char intro1[] = "Du befindest dich an Bord deines Fischerbootes auf hoher See. Während deine zum Trocknen aufgehängte Netze in der Abendbrise schaukeln, liegst du im Bug deines Schiffes, schaust in die untergehende Sonne und denkst an dein zu Hause zurückgebliebene Familie. Die Wellen schlagen leise an den Schiffsrumpf. Allmählich fühlst du, wie du von einer wohligen Müdigkeit umfangen wirst. In einen tiefen, traumlosen Schlaf hinübergleitend, hörst du noch das leise Säuseln des Windes...\n";
-char intro2[] = "Du versuchst deine Augen zu öffnen, musst sie aber sofort geblendet wieder schließen. Du fühlst dich wie zerschlagen. Die Augen mit der Hand bedeckend blinzelst du in die gleißende Sonne und versuchst mühsam, dich aufzurappeln. Taumelnd kommst du wieder auf die Beine und blickst dich verstört um:\n";
-char intro3[] = "Du stehst auf einem weiten Sandstrand. Einige zehn Meter hinter dir, im Süden, bricht sich die Brandung auf dem Strand. Im Norden siehst du einen dichten Palmenwald, der wie eine grüne Wand zum wolkenlosen Himmel emporragt. Der Strand, auf dem du stehst, setzt sich nach Osten und Westen fort. Als du den Strand näher betrachtest erkennst du, dass du dich in einer Zone von angeschwemmten Holz und Tang befindest: könnte das die Hochwasserlinie sein? Dann wärst du angespült worden...\n";
+char intro1[] = "Du befindest dich an Bord deines Fischerbootes auf hoher See. Während deine zum Trocknen aufgehängte Netze in der Abendbrise schaukeln, liegst du im Bug deines Schiffes, schaust in die untergehende Sonne und denkst an dein zu Hause zurückgebliebene Familie. Die Wellen schlagen leise an den Schiffsrumpf. Allmählich fühlst du, wie du von einer wohligen Müdigkeit umfangen wirst. In einen tiefen, traumlosen Schlaf hinübergleitend, hörst du noch das leise Säuseln des Windes...\n\n";
+char intro2[] = "Du versuchst deine Augen zu öffnen, musst sie aber sofort geblendet wieder schließen. Du fühlst dich wie zerschlagen. Die Augen mit der Hand bedeckend blinzelst du in die gleißende Sonne und versuchst mühsam, dich aufzurappeln. Taumelnd kommst du wieder auf die Beine und blickst dich verstört um:\n\n";
+char intro3[] = "Du stehst auf einem weiten Sandstrand. Einige zehn Meter hinter dir, im Süden, bricht sich die Brandung auf dem Strand. Im Norden siehst du einen dichten Palmenwald, der wie eine grüne Wand zum wolkenlosen Himmel emporragt. Der Strand, auf dem du stehst, setzt sich nach Osten und Westen fort. Als du den Strand näher betrachtest erkennst du, dass du dich in einer Zone von angeschwemmten Holz und Tang befindest: könnte das die Hochwasserlinie sein? Dann wärst du angespült worden...\n\n";
 
 
 char half_breakers[] = ",;";
 char breakers[] = ".:";
 
-char rooms[][575] = {\
+char rooms[][575] = {
 "Auch hier findet sich ein Pfeil. Er zeigt jedoch nach Osten. Ein weiterer Gang liegt im Süden.",
 "„Reingefallen!“ schallt dir entgegen. Verwundert siehst du dich um. Von woher kann die Stimme gekommen sein? Überall schimmern die grünen Wände, und von Westen bist du ja gekommen. Sollte dir jemand (oder etwas) gefolgt sein?",
 "Bumms! In deinem Eifer bist du vor die den Gang abschließende Wand gelaufen. Stöhnend reibst du dir den schmerzenden Schädel, als ein Irrlicht aus der Wand rollt. Langsam tanzt es vor deinen Augen hin und her und löst sich schließlich auf...",
@@ -123,7 +123,7 @@ char rooms[][575] = {\
 "Das Korallenriff versperrt dir den Weg nach Süden und Osten. Im Norden liegt der Strand.",
 ""};
 
-char rooms_directions[100][4] = {\
+char rooms_directions[100][4] = {
 "os",
 "w",
 "o",
@@ -224,3 +224,33 @@ char rooms_directions[100][4] = {\
 "wno",
 "wn",
 ""};
+
+char biome[] = {"hhhhhh    hhhhhh ssnhhhhhh snn qbwwwwss   bbwwccc   bbcccll  a  lllll     lttttt    tmmmtt    tmmmm "};
+
+int underwater_rooms[7] = {86,87,88,96,97,99};
+char underwater_descriptions[7][206] = {
+"Du befindest dich knapp unter der Wasseroberfläche und stehst auf einer nach Süden hin abfallenden Sandfläche. Nach Norden und Westen geht es auf den Strand hinauf. Ein Kugelfisch schwimmt an dir vorbei.",
+"Der Boden ist hier knöcheltief mit Tang bedeckt, der deine Füße umfließt. Nach Norden geht es zum Strand, nach Süden, Osten und Westen tiefer ins Meer.",
+"Seeanemonen erfreuen deine Augen mit ihren exotischen Farben. Nach Norden und Osten gelangt man auf den Strand.",
+"Der Strand liegt hier im Westen. Ein Korallenriff im Süden erstaunt dich mit unwahrscheinlicher Formenvielfalt. Bunte Fische schießen zwischen den Korallenästen umher.",
+"Südlich von dir erstreckt sich ein Riff, das von pittoresken Korallen überzogen ist. Alle anderen Wege bleiben unversperrt.",
+"Genau im Süden ragt vor dir ein ungeheures Korallenriff hoch. Eine metergroße Muschel liegt vor deren Füßen auf dem Land. Es ist jedoch sinnlos, sie zu öffnen zu versuchen.",
+"Das Riff im Süden macht hier eine Kurve, sodass du auch im Osten nicht weiter kannst. Der mit Sand bedeckte Meeresgrund führt jedoch im Norden auf den Strand."
+};
+
+char buchtext[] = "Der in altertümlichen Buchstaben verfasste Text des Buches ist an vielen Stellen durch merkwürdige grüne Schleimtropfen unleserlich geworden. Trotzdem glaubst du nach einiger Zeit folgendes entziffern zu können: Wanderer, den es einst auf diese Insel verschlagen hat, höre diese Legende! Seit Urzeiten nagt die Schlange an den Grundfesten des Eilands. Doch jetzt hat das Eiland, das immer widerstehen konnte, seine ursprüngliche Kraft, neu aus sich selbst zu wachsen, verloren. Es gibt nur eine Möglichkeit, der Schlange das Leben zu entreißen: Ihr Lebensei muss zerstört werden. Obschon es ihre Lebensquelle ist, ist es doch nichts anderes als ein Ei: Errette die Insel von dieser Gefahr!";
+
+char hilfe[] = "Folgende Befehle stehen dir zur Verfügung:\n GEHE [Norden/Osten/Süden/Westen]\nTAUCHE [Unter/Auf]\nNEHME [Item] LEGE [Item]\n ";
+
+char zufallsanhaenge[10][170] = {
+"Ein süßes kleines, schwarz-weißes Kaninchen hüpft auf deinem Weg vorüber.",
+"Leises Tappen von Füßen dringt an dein Ohr.",
+"Aus dem hohen Gras lugen zwei lange, schwarze Öhrlein hervor, die sofort wieder verschwinden.",
+"Ein plötzlicher Donnerschlag lässt dich zusammenfahren. Schon entlädt sich über dir ein Gewitterguss.",
+"Ein plötzlicher Windstoß weht dir die Kappe vom Kopf.",
+"Eine Möwe kreist unablässig über deinem Kopf.",
+"Bunte Fischschwärme ziehen ruhig vorbei.",
+"Ein Schmetterling setzt sich auf deine Hand und breitet seine Flügel in die Sonne aus. Dann flattert er wieder davon.",
+"Ein Eingeborener stürzt auf dich zu, murmelt etwas Unverständliches, legt etwas auf den Boden und verschwindet im Unterholz. Du betrachtest das Geschenk, %s.",
+"(Höhle AND NOT Höhlenquelle) Eine Ratte huscht quiekend an deinen Füßen vorbei."
+};
