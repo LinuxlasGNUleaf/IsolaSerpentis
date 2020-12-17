@@ -86,18 +86,6 @@ Das ist nicht drin, du Vandale!
 
 Ich soll für dich suchen? Wer spielt denn hier, ich oder du?
 
-Du bist schon unten!
-
-Du tauchst ab, aber nach einigen Zügen geht dir die Luft aus, und du musst wieder auftauchen!
-
-Du bist schon oben, Transuse!
-
-AAAAAAAAAAAAAAAARGH!!!
-
-Huahuahua!
-
-Schluchz! Schnüff!
-
 Mit einem schaurigen Gebrüll stürzt sich der Troll über dich. Er ist dir an Kraft bei weitem überlegen und zerknackt dir mühelos das Genick…
 
 Der Fisch umschwimmt die Blüte und beäugt sie misstrauisch. Plötzlich schießt er vor und schnappt sie. Du starrst ihn fasziniert an: Sein Bauch glüht in einem flackernden Rot auf. Er zuckt krampfhaft mit der Schwanzflosse und zerfällt zu Fischmehl, das langsam zu Boden sinkt. Vor Erleichterung stößt du einen tiefen Seufzer aus. Auf einmal erblickst du vor dir einen weißen Schimmer. Er geht von einem kleinen, blanken Ei aus, das zwischen dem Fischmehl liegt.
@@ -150,28 +138,6 @@ Random
 
 
 Hiermit verschwindet er.
-
-Zufallsanhängsel
-
-1: (NOT: Meer, Baumhaus) Ein süßes kleines, schwarz-weißes Kaninchen hüpft auf deinem Weg vorüber.
-
-2: (NOT: Moor, Meer) Leises Tappen von Füßen dringt an dein Ohr.
-
-3: (WIESE OR WALD) Aus dem hohen Gras lugen zwei lange, schwarze Öhrlein hervor, die sofort wieder verschwinden.
-
-4: (NOT: Höhle, Meer, Höhlenquelle) Ein plötzlicher Donnerschlag lässt dich zusammenfahren. Schon entlädt sich über dir ein Gewitterguss.
-
-5: (NOT: Meer, Höhle, Baumhaus, Höhlenquelle) Ein plötzlicher Windstoß weht dir die Kappe vom Kopf. (Kappe ablegen)
-
-6: (Meer AND not Unterwasser) Eine Möwe kreist unablässig über deinem Kopf.
-
-7: (Meer AND Unterwasser) Bunte Fischschwärme ziehen ruhig vorbei.
-
-8: (Wiese) Ein Schmetterling setzt sich auf deine Hand und breitet seine Flügel in die Sonne aus. Dann flattert er wieder davon.
-
-9: (Wald) Ein Eingeborener stürzt auf dich zu, murmelt etwas Unverständliches, legt etwas auf den Boden und verschwindet im Unterholz. Du betrachtest das Geschenk, {}.
-
-10: (Höhle AND NOT Höhlenquelle) Eine Ratte huscht quiekend an deinen Füßen vorbei.
 
 If mehr als 110 Befehle: 
 

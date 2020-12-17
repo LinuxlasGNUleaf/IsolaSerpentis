@@ -227,8 +227,8 @@ char rooms_directions[100][4] = {
 
 char biome[] = {"hhhhhh    hhhhhh ssnhhhhhh snn qbwwwwss   bbwwccc   bbcccll  a  lllll     lttttt    tmmmtt    tmmmm "};
 
-int underwater_rooms[7] = {86,87,88,96,97,99};
-char underwater_descriptions[7][206] = {
+int underwater_rooms[7] = {86,87,88,96,97,98,99};
+char underwater_descriptions[7][210] = {
 "Du befindest dich knapp unter der Wasseroberfläche und stehst auf einer nach Süden hin abfallenden Sandfläche. Nach Norden und Westen geht es auf den Strand hinauf. Ein Kugelfisch schwimmt an dir vorbei.",
 "Der Boden ist hier knöcheltief mit Tang bedeckt, der deine Füße umfließt. Nach Norden geht es zum Strand, nach Süden, Osten und Westen tiefer ins Meer.",
 "Seeanemonen erfreuen deine Augen mit ihren exotischen Farben. Nach Norden und Osten gelangt man auf den Strand.",
@@ -240,7 +240,7 @@ char underwater_descriptions[7][206] = {
 
 char buchtext[] = "Der in altertümlichen Buchstaben verfasste Text des Buches ist an vielen Stellen durch merkwürdige grüne Schleimtropfen unleserlich geworden. Trotzdem glaubst du nach einiger Zeit folgendes entziffern zu können: Wanderer, den es einst auf diese Insel verschlagen hat, höre diese Legende! Seit Urzeiten nagt die Schlange an den Grundfesten des Eilands. Doch jetzt hat das Eiland, das immer widerstehen konnte, seine ursprüngliche Kraft, neu aus sich selbst zu wachsen, verloren. Es gibt nur eine Möglichkeit, der Schlange das Leben zu entreißen: Ihr Lebensei muss zerstört werden. Obschon es ihre Lebensquelle ist, ist es doch nichts anderes als ein Ei: Errette die Insel von dieser Gefahr!";
 
-char hilfe[] = "Folgende Befehle stehen dir zur Verfügung:\n GEHE [Norden/Osten/Süden/Westen]\nTAUCHE [Unter/Auf]\nNEHME [Item] LEGE [Item]\n ";
+char hilfe[] = "Folgende Befehle stehen dir zur Verfügung:\n GEHE [Norden/Osten/Süden/Westen]\nTAUCHE [Unter/Auf]\nNEHME [Item] LEGE [Item]\nSCHREIE\nWEINE\n";
 
 char zufallsanhaenge[10][170] = {
 "Ein süßes kleines, schwarz-weißes Kaninchen hüpft auf deinem Weg vorüber.",

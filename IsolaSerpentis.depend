@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1608143473 source:/home/jakob/Documents/IsolaSerpentis/main.c
+1608222379 source:/home/jakob/Documents/IsolaSerpentis/main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -9,5 +9,5 @@
 	<windows.h>
 	<unistd.h>
 
-1608144898 /home/jakob/Documents/IsolaSerpentis/texts.h
+1608219073 /home/jakob/Documents/IsolaSerpentis/texts.h
 
