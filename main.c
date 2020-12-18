@@ -19,8 +19,8 @@ const int slow_reading_tempo = 3;
 const char commands[5][20]= {"gehe","nehme","lege","",""};
 
 int room_ind = 77;
+int last_room = 77;
 int underwater_room_ind = 0;
-int last_room;
 bool underwater = false;
 bool can_dive = true;
 
@@ -104,18 +104,61 @@ void start_seq()
 
 void handle_command()
 {
-    char command[20];
-    char attribute[20];
-    fancy_print("Eingabe: ", standard_reading_tempo, true);
-    scanf("%s %s",command, attribute);
+    char buffer[60];
+    char command[20] = "";
+    char attribute[20] = "";
 
-    for (int i = 0; i < 20; i++)
+    fancy_print("Eingabe: ", standard_reading_tempo, false);
+    fgets(buffer, sizeof(buffer), stdin);
+
+    int j = 0;
+    bool is_command = true;
+    for (int i = 0; i < sizeof(buffer); i++)
+    {
+        if (buffer[i] == ' ')
+        {
+            if (!is_command)
+                break;
+            is_command = false;
+            j = 0;
+            continue;
+        }
+        if (buffer[i] == '\n')
+        {
+            if (is_command)
+            {
+                command[j++] = '\0';
+                break;
+            }
+            else
+            {
+                attribute[j++] = '\0';
+                break;
+            }
+            break;
+        }
+        if (is_command && j < sizeof(command))
+        {
+            command[j++] = buffer[i];
+        }
+        else if (j < sizeof(attribute))
+        {
+            attribute[j++] = buffer[i];
+        }
+        else
+            break;
+    }
+
+    for (int i = 0; i < strlen(command); i++)
         command[i] = tolower(command[i]);
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i < strlen(attribute); i++)
         attribute[i] = tolower(attribute[i]);
 
+
+    printf("|%s|",command);
     if (!strcmp(command,"gehe"))
     {
+        last_room = room_ind;
         if (underwater)
         {
             if (!strcmp(attribute,"norden"))
@@ -129,7 +172,6 @@ void handle_command()
                         return;
                     }
                 }
-                fancy_print("In diese Richtung kannst du nicht weiter tauchen!\n",standard_reading_tempo,true);
             }
             else if (!strcmp(attribute,"osten"))
             {
@@ -142,7 +184,6 @@ void handle_command()
                         return;
                     }
                 }
-                fancy_print("In diese Richtung kannst du nicht weiter tauchen!\n",standard_reading_tempo,true);
             }
             else if (!strcmp(attribute,"westen"))
             {
@@ -155,7 +196,6 @@ void handle_command()
                         return;
                     }
                 }
-                fancy_print("In diese Richtung kannst du nicht weiter tauchen!\n",standard_reading_tempo,true);
             }
             else if (!strcmp(attribute,"süden"))
             {
@@ -168,8 +208,13 @@ void handle_command()
                         return;
                     }
                 }
-                fancy_print("In diese Richtung kannst du nicht weiter tauchen!\n",standard_reading_tempo,true);
             }
+            else
+            {
+                fancy_print("Hm... diese Richtung kenne ich nicht... probiers mal mit Norden, Osten, Süden oder Westen.\n", standard_reading_tempo, true);
+                return;
+            }
+            fancy_print("In diese Richtung kannst du nicht weiter tauchen!\n",standard_reading_tempo,true);
         }
         else
         {
@@ -237,17 +282,12 @@ void handle_command()
                     underwater = false;
                 }
                 else
-                {
                     fancy_print("Du bist schon oben, Transuse!\n", standard_reading_tempo, true);
-                }
             }
             else if (!strcmp(attribute,"ab"))
             {
-
                 if (underwater)
-                {
                     fancy_print("Du bist schon unten!\n", standard_reading_tempo, true);
-                }
                 else if (can_dive)
                 {
                     for (int i = 0; i < sizeof(underwater_rooms); i++)
@@ -261,18 +301,13 @@ void handle_command()
                         }
                     }
                     if (!underwater)
-                    {
                         fancy_print("Hier ist es zu flach zum Abtauchen!\n", standard_reading_tempo, true);
-                    }
                 }
                 else
-                {
                     fancy_print("Du tauchst ab, aber nach einigen Zügen geht dir die Luft aus, und du musst wieder auftauchen!\n", standard_reading_tempo, true);
-                }
             }
             else
                 fancy_print("Du kannst entweder auf- oder abtauchen.\n", standard_reading_tempo, true);
-
         }
         else
             fancy_print("Du versuchst dich kopfüber in den Boden zu wühlen. Erst dann merkst du, dass du dich an Land befindest...\n", standard_reading_tempo, true);
@@ -306,6 +341,7 @@ void handle_command()
 void print_description()
 {
     char desc[30];
+    printf("\n");
     if (biome[room_ind-1] == 'h')      sprintf(desc, "%i - HÖHLE\n",room_ind);
     else if (biome[room_ind-1] == 's') sprintf(desc, "%i - SUMPF\n",room_ind);
     else if (biome[room_ind-1] == 'n') sprintf(desc, "%i - NEBEL\n",room_ind);
@@ -342,7 +378,7 @@ void print_description()
             fancy_print(rooms[room_ind-1], standard_reading_tempo, true);
         }
     }
-    printf(" ");
+    printf("\n");
 
     switch(rand()%10)
     {
@@ -363,7 +399,8 @@ void print_description()
             fancy_print(zufallsanhaenge[3], standard_reading_tempo, true);
         break;
     case 4:
-        if (biome[room_ind-1] != 'm' && biome[room_ind-1] != 'h' && biome[room_ind-1] != 'q' && biome[room_ind-1] != 'a'){
+        if (biome[room_ind-1] != 'm' && biome[room_ind-1] != 'h' && biome[room_ind-1] != 'q' && biome[room_ind-1] != 'a')
+        {
             fancy_print(zufallsanhaenge[4], standard_reading_tempo, true);
             // TODO (jakob#1#): Kappe ablegen
         }
@@ -381,7 +418,8 @@ void print_description()
             fancy_print(zufallsanhaenge[7], standard_reading_tempo, true);
         break;
     case 8:
-        if (biome[room_ind-1] == 'l'){
+        if (biome[room_ind-1] == 'l')
+        {
             fancy_print(zufallsanhaenge[8], standard_reading_tempo, true);
             // TODO (jakob#1#): zufälliges Item geben
         }
@@ -391,7 +429,6 @@ void print_description()
             fancy_print(zufallsanhaenge[9], standard_reading_tempo, true);
         break;
     };
-    printf("\n");
 }
 
 bool game = true;
@@ -405,7 +442,8 @@ int main()
     while(game)  //main loop
     {
         handle_command();
-        print_description();
+        if (room_ind != last_room)
+            print_description();
     }
     return 0;
 }

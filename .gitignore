@@ -59,3 +59,4 @@ bin/
 
 # Layouts
 *.layout
+*.depend
