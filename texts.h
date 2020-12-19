@@ -86,7 +86,7 @@ char rooms[][575] = {
 "Die Steiglöcher führen zu einem kleinen Baumhaus, das dicht an den mächtigen Stamm angeschmiegt ist. Die Krone des Baumes bildet das Dach. Du trittst ein. Die Möbelstücke, ein Bett, ein Tisch mit einem Stuhl und ein kleiner Hocker sind wahllos über den Raum verstreut und umgestürzt. Hat hier ein Kampf stattgefunden?",
 "",
 "",
-"Du gehst durch den Wald und betrachtest die fremdartigen, überall wuchernden Pilze. Als du einen von ihnen leicht berührst, quillt eine Woche grauer Sporen hervor. Sie verfliegt langsam und plötzlich siehst du einen gigantischen Ameisenhaufen, der dir nur den Weg nach Osten freilässt. Du siehst genauer hin und würgender Ekel steigt in dir auf: Legionen von rubinroter Riesenameisen mit knackenden Kieferklammern strömen auf dich zu.",
+"Du gehst durch den Wald und betrachtest die fremdartigen, überall wuchernden Pilze. Als du einen von ihnen leicht berührst, quillt eine Woche grauer Sporen hervor. Sie verfliegt langsam und plötzlich siehst du einen gigantischen Ameisenhaufen, der dir nur den Weg nach Osten freilässt.",
 "Du bahnst dir deine Weg durch den Urwald und bewunderst die wunderschönen Orchideen, die von den Bäumen herabhängen. Der Wald setzt nach Osten und Westen fort. Im Norden fällt der Boden steil zu einer Schlucht ab. Im Süden schimmert zwischen den Bäumen der cyanblaue Strand hervor.",
 "Du gehst durch den Wald und zerteilst die Lianenvorhänge mit den Händen. Große, fremdartig anmutende Insekten schwirren um dich herum. Im Norden blickst du in eine steile Schlucht. Nach Osten und Westen geht es tiefer in den Wald. Im Süden betrittst du einen Strand.",
 "Plötzlich stehst du vor einer riesigen fleischfressenden Pflanze, die ihre klebrigen Tentakel nach dir ausstreckt. Mit Mühe gelingt es dir, sie zu umgehen. Die Pflanze macht dich darauf aufmerksam, dass es in diesem Wald auch noch andere Gefahren geben kann... Im Süden leuchtet es orange, auf den anderen drei Seiten liegt Wald.",
@@ -129,16 +129,16 @@ char biome[] = {"hhhhhh    hhhhhh ssnhhhhhh snn qbwwwwss   bbwwccc   bbcccll  a 
 
 int underwater_rooms[7] = {86,87,88,96,97,98,99};
 char underwater_descriptions[7][210] = {
-"Du befindest dich knapp unter der Wasseroberfläche und stehst auf einer nach Süden hin abfallenden Sandfläche. Nach Norden und Westen geht es auf den Strand hinauf. Ein Kugelfisch schwimmt an dir vorbei.",
-"Der Boden ist hier knöcheltief mit Tang bedeckt, der deine Füße umfließt. Nach Norden geht es zum Strand, nach Süden, Osten und Westen tiefer ins Meer.",
-"Seeanemonen erfreuen deine Augen mit ihren exotischen Farben. Nach Norden und Osten gelangt man auf den Strand.",
-"Der Strand liegt hier im Westen. Ein Korallenriff im Süden erstaunt dich mit unwahrscheinlicher Formenvielfalt. Bunte Fische schießen zwischen den Korallenästen umher.",
-"Südlich von dir erstreckt sich ein Riff, das von pittoresken Korallen überzogen ist. Alle anderen Wege bleiben unversperrt.",
-"Genau im Süden ragt vor dir ein ungeheures Korallenriff hoch. Eine metergroße Muschel liegt vor deren Füßen auf dem Land. Es ist jedoch sinnlos, sie zu öffnen zu versuchen.",
-"Das Riff im Süden macht hier eine Kurve, sodass du auch im Osten nicht weiter kannst. Der mit Sand bedeckte Meeresgrund führt jedoch im Norden auf den Strand."
+"Du befindest dich knapp unter der Wasseroberfläche und stehst auf einer nach Süden hin abfallenden Sandfläche. Nach Norden und Westen geht es auf den Strand hinauf. Ein Kugelfisch schwimmt an dir vorbei.\n",
+"Der Boden ist hier knöcheltief mit Tang bedeckt, der deine Füße umfließt. Nach Norden geht es zum Strand, nach Süden, Osten und Westen tiefer ins Meer.\n",
+"Seeanemonen erfreuen deine Augen mit ihren exotischen Farben. Nach Norden und Osten gelangt man auf den Strand.\n",
+"Der Strand liegt hier im Westen. Ein Korallenriff im Süden erstaunt dich mit unwahrscheinlicher Formenvielfalt. Bunte Fische schießen zwischen den Korallenästen umher.\n",
+"Südlich von dir erstreckt sich ein Riff, das von pittoresken Korallen überzogen ist. Alle anderen Wege bleiben unversperrt.\n",
+"Genau im Süden ragt vor dir ein ungeheures Korallenriff hoch. Eine metergroße Muschel liegt vor deren Füßen auf dem Land. Es ist jedoch sinnlos, sie zu öffnen zu versuchen.\n",
+"Das Riff im Süden macht hier eine Kurve, sodass du auch im Osten nicht weiter kannst. Der mit Sand bedeckte Meeresgrund führt jedoch im Norden auf den Strand.\n"
 };
 
-char buchtext[] = "Der in altertümlichen Buchstaben verfasste Text des Buches ist an vielen Stellen durch merkwürdige grüne Schleimtropfen unleserlich geworden. Trotzdem glaubst du nach einiger Zeit folgendes entziffern zu können: Wanderer, den es einst auf diese Insel verschlagen hat, höre diese Legende! Seit Urzeiten nagt die Schlange an den Grundfesten des Eilands. Doch jetzt hat das Eiland, das immer widerstehen konnte, seine ursprüngliche Kraft, neu aus sich selbst zu wachsen, verloren. Es gibt nur eine Möglichkeit, der Schlange das Leben zu entreißen: Ihr Lebensei muss zerstört werden. Obschon es ihre Lebensquelle ist, ist es doch nichts anderes als ein Ei: Errette die Insel von dieser Gefahr!";
+char buchtext[] = "Der in altertümlichen Buchstaben verfasste Text des Buches ist an vielen Stellen durch merkwürdige grüne Schleimtropfen unleserlich geworden. Trotzdem glaubst du nach einiger Zeit folgendes entziffern zu können: Wanderer, den es einst auf diese Insel verschlagen hat, höre diese Legende! Seit Urzeiten nagt die Schlange an den Grundfesten des Eilands. Doch jetzt hat das Eiland, das immer widerstehen konnte, seine ursprüngliche Kraft, neu aus sich selbst zu wachsen, verloren. Es gibt nur eine Möglichkeit, der Schlange das Leben zu entreißen: Ihr Lebensei muss zerstört werden. Obschon es ihre Lebensquelle ist, ist es doch nichts anderes als ein Ei: Errette die Insel von dieser Gefahr!\n";
 
 char hilfe[] = "Folgende Befehle stehen dir zur Verfügung:\n GEHE [Norden/Osten/Süden/Westen]\nTAUCHE [Unter/Auf]\nNEHME [Item] LEGE [Item]\nSCHREIE\nWEINE\n";
 
@@ -151,6 +151,89 @@ char zufallsanhaenge[10][170] = {
 "Eine Möwe kreist unablässig über deinem Kopf.\n",
 "Bunte Fischschwärme ziehen ruhig vorbei.\n",
 "Ein Schmetterling setzt sich auf deine Hand und breitet seine Flügel in die Sonne aus. Dann flattert er wieder davon.\n",
-"Ein Eingeborener stürzt auf dich zu, murmelt etwas Unverständliches, legt etwas auf den Boden und verschwindet im Unterholz. Du betrachtest das Geschenk, %s.\n",
-"(Höhle AND NOT Höhlenquelle) Eine Ratte huscht quiekend an deinen Füßen vorbei\n."
+"Eine Ratte huscht quiekend an deinen Füßen vorbei\n."
+};
+
+char objekte[11][8] = {
+"Ring",     //0
+"Flinte",   //1
+"Amulett",  //2
+"Blüte",    //3
+"Löffel",   //4
+"Messer",   //5
+"Gabel",    //6
+"Flasche",  //7
+"Schild",   //8
+"Kappe",    //9
+"Kette"     //10
+};
+
+#define RING 0
+#define FLINTE 1
+#define AMULETT 2
+#define BLUETE 3
+#define LOEFFEL 4
+#define MESSER 5
+#define GABEL 6
+#define FLASCHE 7
+#define SCHILD 8
+#define KAPPE 9
+#define KETTE 10
+
+char objekte_artk[11][5] = {
+"ein",
+"eine",
+"ein",
+"eine",
+"ein",
+"ein",
+"eine",
+"eine",
+"ein",
+"eine",
+"eine"
+};
+
+char objekte_desc[11][210] = {
+"Es handelt sich um einen schmalen Goldring, der mit einem funkelnden Brillanten besetzt ist.\n",
+"Die Flinte ist ziemlich verrostet. Auf dem Schaft sind prächtige Schnitzereien sichtbar. Eine Gravierung auf dem Lauf verrät dir, dass es sich um eine Produktion von Wesley & Lie. Sie ist übrigens geladen.\n",
+"Es ist eine massive Goldscheibe, in die eine dämonische Fratze eingeritzt ist. Dich überläuft unwillkürlich ein Schauer.\n",
+"Die exotische Schönheit der purpurroten Blüte beeindruckt dich. Aus ihr quillt giftgrüner Saft.\n",
+"Ein Löffel ohne besondere Verzierung, anscheinend ein Eierlöffel.\n",
+"Es handelt sich um ein zweiseitig geschliffenes, ziemlich scharfes Stahlmesser.\n",
+"Die Gabel hat sieben Zinken, die wie die Klauen eines Vogelfußes angeordnet sind.\n",
+"Die Flasche aus blauem Glas ist mit weinrotem Siegellack verschlossen. Sie enthält wirbelnde Rauchschwaden. Oder ist es eine Sinnestäuschung?\n",
+"Es ist ein Rundschild aus dem schwarzen Holz des Eisenbaums; Auf ihm ist in hellen Farben ein Ameisenbär gemalt.\n",
+"Es ist deine Kappe, die du immer beim Fischen als Sonnenschutz getragen hast.\n",
+"Die Kette besteht aus verschiedenen, geschliffenen Edelsteinen: Diamanten, Smaragde, Rubine usw.\n"
+};
+
+int objekte_loc[11] = {26,36,49,55,62,62,62,65,67,85,96};
+
+#define TROLL 0
+#define SUMPFMONSTER 1
+#define AMEISEN 2
+#define FISCH 3
+
+int monster_stat[4] = {0,0,0,0};
+
+char monster_defeat[4][250] = {
+"Mit einem schaurigen Gebrüll stürzt sich der Troll über dich. Er ist dir an Kraft bei weitem überlegen und zerknackt dir mühelos das Genick...",
+"Das Sumpfwesen umschlingt dich mit seinen glitschigen Armen und zieht dich ins Moor, wo du elendig ersäufst.",
+"Tausende von Killerameisen überfluten dich. Glühende Nägel scheinen dir ins Fleisch getrieben zu werden, als sie dir Fleischstückchen aus dem Körper reißen. Mach einer halben Minute zeugt nur ein Skelett von dir.",
+"Der Fisch umschwimmt dich in immer enger werdenden Kreisen. Er beißt sich in deinem Bein fest! Durch das Blut angelockt, schießen hunderte von kleinen, silbernen Blitzen auf dich zu. Die Fischschwärme lassen nicht viel von dir übrig..."
+};
+
+char monster_victory[4][475] = {
+"Ein Blutstrahl schießt aus der Wunde des Trolls. Er bricht tot zusammen!",
+"Der Geist erscheint. Wutentbrannt legt er die Flinte an und schießt auf das Monster. Mit lautem Getöse explodiert das Schießeisen, Splitter fliegen umher. Das Monster sinkt mit schmerzverzerrter Miene ins Moorwasser zurück. Glücklich über deine Rettung bedankst du dich beim Geist. „Gern geschehen“, damit verschwindet er.",
+"Als die Ameisen deinen Schild wahrnehmen, flüchten sie von Panik ergriffen in ihren Bau. Jetzt bemerkst du den blauen Hals einer Flasche, die aus dem haufen ragt.",
+"Der Fisch umschwimmt die Blüte und beäugt sie misstrauisch. Plötzlich schießt er vor und schnappt sie. Du starrst ihn fasziniert an: Sein Bauch glüht in einem flackernden Rot auf. Er zuckt krampfhaft mit der Schwanzflosse und zerfällt zu Fischmehl, das langsam zu Boden sinkt. Vor Erleichterung stößt du einen tiefen Seufzer aus. Auf einmal erblickst du vor dir einen weißen Schimmer. Er geht von einem kleinen, blanken Ei aus, das zwischen dem Fischmehl liegt."
+};
+
+char new_object_lines[4][25] = {
+"Vor dir siehst du %s %s.\n",
+"Du stößst auf %s %s.\n",
+"Hier siehst du %s %s.\n",
+"Du findest %s %s.\n",
 };

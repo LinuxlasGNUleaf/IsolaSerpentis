@@ -4,7 +4,7 @@ SU$		Substantiv
 VE$		Verb
 MI$		Mittel
 00(0Z)		Raumnummer des Objekts
-DW$(0Z)		Messer, Flinte usw.
+0W$(0Z)		Messer, Flinte usw.
 0A$(0Z)		Akkusativartikel Objekt
 0B$(0Z)		Langbeschreibung Objekt
 FG!		-1 = hat Gepäck, 0 hat keins
