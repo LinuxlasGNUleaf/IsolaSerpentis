@@ -60,3 +60,6 @@ bin/
 # Layouts
 *.layout
 *.depend
+
+.vscode
+main
