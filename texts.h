@@ -124,6 +124,18 @@ char rooms[][575] = {
 
 char rooms_directions[100][4] = {"os", "w", "o", "wo", "wos", "w", "", "", "", "", "nos", "wo", "wos", "w", "nos", "ws", "", "so", "wo", "ws", "no", "sw", "no", "wo", "nws", "n", "", "ns", "o", "nw", "", "n", "", "wso", "nosw", "osw", "wo", "wno", "", "", "", "", "ns", "nos", "wno", "wno", "wos", "wos", "w", "", "", "", "no", "nw", "o", "wo", "nw", "nos", "nws", "", "", "", "", "", "o", "wos", "wos", "nosw", "nws", "", "", "", "", "", "os", "nosw", "nosw", "nosw", "nosw", "", "", "", "", "", "nos", "nosw", "nosw", "nosw", "nosw", "", "", "", "", "", "no", "wno", "wno", "wno", "wn", ""};
 
+#define HOEHLE 'h'
+#define SUMPF 's'
+#define NEBEL 'n'
+#define HOEHLENQUELLE 'q'
+#define BERGE 'b'
+#define WIESE 'w'
+#define SCHLUCHT 'c'
+#define BAUMHAUS 'a'
+#define WALD 'l'
+#define STRAND 't'
+#define MEER 'm'
+
 char biome[] = {"hhhhhh    hhhhhh ssnhhhhhh snn qbwwwwss   bbwwccc   bbcccll  a  lllll     lttttt    tmmmtt    tmmmm "};
 
 int underwater_rooms[7] = {86, 87, 88, 96, 97, 98, 99};
@@ -138,7 +150,7 @@ char underwater_descriptions[7][210] = {
 
 char buchtext[] = "Der in altertümlichen Buchstaben verfasste Text des Buches ist an vielen Stellen durch merkwürdige grüne Schleimtropfen unleserlich geworden. Trotzdem glaubst du nach einiger Zeit folgendes entziffern zu können: Wanderer, den es einst auf diese Insel verschlagen hat, höre diese Legende! Seit Urzeiten nagt die Schlange an den Grundfesten des Eilands. Doch jetzt hat das Eiland, das immer widerstehen konnte, seine ursprüngliche Kraft, neu aus sich selbst zu wachsen, verloren. Es gibt nur eine Möglichkeit, der Schlange das Leben zu entreißen: Ihr Lebensei muss zerstört werden. Obschon es ihre Lebensquelle ist, ist es doch nichts anderes als ein Ei: Errette die Insel von dieser Gefahr!\n";
 
-char hilfe[] = "Folgende Befehle stehen dir zur Verfügung:\n GEHE [Norden/Osten/Süden/Westen]\nTAUCHE [Unter/Auf]\nNEHME [Item]\nLEGE [Item]\nSCHREIE\nWEINE\nHILFE";
+char hilfe[] = "Folgende Befehle stehen dir zur Verfügung:\n GEHE [Norden/Osten/Süden/Westen]\nNUTZE [OBJEKT]\nTAUCHE [Unter/Auf]\nNEHME [Objekt]\nLEGE [Objekt]\nSCHREIE\nWEINE\nLESE [Objekt]\nTrinke [Objekt]\nHILFE";
 
 char zufallsanhaenge[10][170] = {
     "Ein süßes kleines, schwarz-weißes Kaninchen hüpft auf deinem Weg vorüber.\n",
@@ -166,17 +178,17 @@ char zufallsanhaenge[10][170] = {
 #define KETTE 10
 
 const char objekte[OBJEKTE_LEN][10] = {
-    "Ring",    //0
-    "Flinte",  //1
-    "Amulett", //2
-    "Blüte",   //3
-    "Löffel",  //4
-    "Messer",  //5
-    "Gabel",   //6
-    "Flasche", //7
-    "Schild",  //8
-    "Kappe",   //9
-    "Kette"    //10
+    "Ring",    //1
+    "Flinte",  //2
+    "Amulett", //3
+    "Blüte",   //4
+    "Löffel",  //5
+    "Messer",  //6
+    "Gabel",   //7
+    "Flasche", //8
+    "Schild",  //9
+    "Kappe",   //10
+    "Kette"    //11
 };
 
 const char objekte_artk1[OBJEKTE_LEN][7] = {
@@ -188,7 +200,7 @@ const char objekte_artk1[OBJEKTE_LEN][7] = {
     "ein",
     "eine",
     "eine",
-    "ein",
+    "einen",
     "eine",
     "eine"};
 
@@ -201,15 +213,15 @@ const char objekte_artk2[OBJEKTE_LEN][4] = {
     "das",
     "die",
     "die",
-    "das",
+    "den",
     "die",
     "die"};
 
 const int objekte_hidden[] = {3};
 
-const char objekte_desc[OBJEKTE_LEN][210] = {
+char objekte_desc[OBJEKTE_LEN][220] = {
     "Es handelt sich um einen schmalen Goldring, der mit einem funkelnden Brillanten besetzt ist.\n",
-    "Die Flinte ist ziemlich verrostet. Auf dem Schaft sind prächtige Schnitzereien sichtbar. Eine Gravierung auf dem Lauf verrät dir, dass es sich um eine Produktion von Wesley & Lie. Sie ist übrigens geladen.\n",
+    "Die Flinte ist ziemlich verrostet. Auf dem Schaft sind prächtige Schnitzereien sichtbar. Eine Gravierung auf dem Lauf verrät dir, dass es sich um eine Produktion von Wesley & Lie handelt. Sie ist übrigens geladen.\n",
     "Es ist eine massive Goldscheibe, in die eine dämonische Fratze eingeritzt ist. Dich überläuft unwillkürlich ein Schauer.\n",
     "Die exotische Schönheit der purpurroten Blüte beeindruckt dich. Aus ihr quillt giftgrüner Saft.\n",
     "Ein Löffel ohne besondere Verzierung, anscheinend ein Eierlöffel.\n",
@@ -229,7 +241,12 @@ int objekte_loc[OBJEKTE_LEN] = {26, 36, 49, 55, 62, 62, 62, 65, 67, 85, 96};
 #define AMEISEN 2
 #define FISCH 3
 
-int monster_stat[MONSTER_LEN] = {0, 0, 0, 0};
+#define TROLL_LOC 13
+#define SUMPFMONSTER_LOC 18
+#define AMEISEN_LOC 65
+#define FISCH_LOC 98
+
+int monster_defeated[MONSTER_LEN] = {0, 0, 0, 0};
 
 char new_object_lines[4][25] = {
     "Vor dir siehst du %s %s",
