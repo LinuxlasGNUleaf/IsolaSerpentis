@@ -43,6 +43,8 @@ void os_wait(int ms)
 {
     Sleep(ms);
 }
+SetConsoleOutputCP (1252);//für Umlaut-Ausgabe
+SetConsoleCP (1252);//für Umlaut-Eingabe
 #else
 void os_wait(int ms)
 {
