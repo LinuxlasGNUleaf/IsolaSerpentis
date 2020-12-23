@@ -43,8 +43,6 @@ void os_wait(int ms)
 {
     Sleep(ms);
 }
-SetConsoleOutputCP (1252);//für Umlaut-Ausgabe
-SetConsoleCP (1252);//für Umlaut-Eingabe
 #else
 void os_wait(int ms)
 {
@@ -331,7 +329,11 @@ void handle_command()
                     }
                 }
             }
+            #ifdef  _WIN32
+            else if (!strcmp(attribute, "sueden"))
+            #else
             else if (!strcmp(attribute, "süden"))
+            #endif
             {
                 for (int i = 0; i < sizeof(underwater_rooms) / sizeof(int); i++)
                 {
@@ -345,7 +347,11 @@ void handle_command()
             }
             else
             {
+                #ifdef  _WIN32
+                fancy_print("Hm... diese Richtung kenne ich nicht... probiers mal mit Norden, Osten, Sueden oder Westen.\n", standard_reading_tempo, true, true);
+                #else
                 fancy_print("Hm... diese Richtung kenne ich nicht... probiers mal mit Norden, Osten, Süden oder Westen.\n", standard_reading_tempo, true, true);
+                #endif
                 return;
             }
             fancy_print("In diese Richtung kannst du nicht weiter tauchen!\n", standard_reading_tempo, true, true);
@@ -376,7 +382,11 @@ void handle_command()
                         room_ind -= 1;
                 }
             }
+            #ifdef  _WIN32
+            else if (!strcmp(attribute, "sueden"))
+            #else
             else if (!strcmp(attribute, "süden"))
+            #endif
             {
                 for (int i = 0; i < 4; i++)
                 {
@@ -386,7 +396,11 @@ void handle_command()
             }
             else
             {
+                #ifdef  _WIN32
+                fancy_print("Hm... diese Richtung kenne ich nicht... probiers mal mit Norden, Osten, Sueden oder Westen.\n", standard_reading_tempo, true, true);
+                #else
                 fancy_print("Hm... diese Richtung kenne ich nicht... probiers mal mit Norden, Osten, Süden oder Westen.\n", standard_reading_tempo, true, true);
+                #endif
                 return;
             }
             if (last_room == room_ind)
@@ -766,7 +780,7 @@ void handle_command()
                 room_ind = 62;
                 break;
             case 49:
-                fancy_print("Die Böschung ist zu steil, um sie von dieser Seite aus zu ersteigen.\n",standard_reading_tempo,true,true);
+                fancy_print("Die Böschung ist zu steil, um sie von dieser Seite aus zu ersteigen.\n", standard_reading_tempo, true, true);
                 break;
             default:
                 fancy_print("Hier gibt es nichts, wo du hinaufklettern könntest.\n", standard_reading_tempo, true, true);
@@ -782,7 +796,7 @@ void handle_command()
                 room_ind = 53;
                 break;
             case 59:
-                fancy_print("Vorsichtig steigst du die steile Böschung in die Schlucht hinunter.\n",standard_reading_tempo,true,true);
+                fancy_print("Vorsichtig steigst du die steile Böschung in die Schlucht hinunter.\n", standard_reading_tempo, true, true);
                 room_ind = 49;
                 break;
             default:
@@ -803,7 +817,7 @@ void print_description()
     if (biome[last_room - 1] != MEER && biome[room_ind - 1] == MEER)
         fancy_print("Langsam watest du ins Meer hinein.\n", standard_reading_tempo, true, true);
     else if (biome[last_room - 1] == MEER && biome[room_ind - 1] != MEER)
-        fancy_print("Von Meerwasser triefend kommst du wieder an Land und lässt deine Kleidung in der Sonne trocknen.", standard_reading_tempo, true, true);
+        fancy_print("Von Meerwasser triefend kommst du wieder an Land und lässt deine Kleidung in der Sonne trocknen.\n", standard_reading_tempo, true, true);
 
     char desc[30];
     printf("\n");
@@ -1059,6 +1073,9 @@ void on_room_enter()
 int main()
 {
     srand((unsigned)time(NULL));
+    #ifdef _WIN32
+    SetConsoleCP(CP_UTF8);
+    #endif
     if (!DEBUG && !SKIP_INTRO)
         start_seq();
 
