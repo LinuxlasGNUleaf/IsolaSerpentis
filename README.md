@@ -1,9 +1,10 @@
 # IsolaSerpentis
-A text-adventure by DaWe and AnEe ported from BASIC to Python by JaWs
+A text-adventure by DaWe and AnEn ported from BASIC to C by JaWs
 
 ## Progress
 [x] transcription of scans
 [x] basic map and movement
 [x] objects management
-[ ] special fields
-[ ] fight implementation
+[x] special fields
+[x] fight implementation
+[x] overall game management

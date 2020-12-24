@@ -13,13 +13,13 @@
 #include <unistd.h>
 #endif
 
-#define SKIP_INTRO 1
+#define SKIP_INTRO 0
 #define DEBUG 0
 
 //constants
 const int max_line_length = 120;
-const int standard_reading_tempo = 10;
-const int slow_reading_tempo = 3;
+const int standard_reading_tempo = 8;
+const int slow_reading_tempo = 15;
 
 //game variables
 int room_ind = 77;
@@ -30,6 +30,8 @@ int hilfe_zaehler = 0;
 int backpack[4] = {-1, -1, -1, -1};
 int backpack_size = 4;
 int idle_turns = 2;
+int cmd_count = 0;
+
 bool kappe_auf = false;
 bool geist = false;
 bool underwater = false;
@@ -212,7 +214,7 @@ void start_seq()
 {
     for (int i = 0; i < sizeof(backpack) / sizeof(int); i++)
         backpack[i] = -1;
-    fancy_print(title, slow_reading_tempo, false, false);
+    fancy_print(title, 3, false, false);
     printf("Drücke ENTER, um zu starten.");
     getchar();
     printf("\n");
@@ -236,6 +238,8 @@ void handle_command()
 
     fancy_print("Eingabe: ", standard_reading_tempo, false, false);
     fgets(buffer, sizeof(buffer), stdin);
+
+    cmd_count++;
 
     int j = 0;
     bool is_command = true;
@@ -329,11 +333,11 @@ void handle_command()
                     }
                 }
             }
-            #ifdef  _WIN32
+#ifdef _WIN32
             else if (!strcmp(attribute, "sueden"))
-            #else
+#else
             else if (!strcmp(attribute, "süden"))
-            #endif
+#endif
             {
                 for (int i = 0; i < sizeof(underwater_rooms) / sizeof(int); i++)
                 {
@@ -347,11 +351,11 @@ void handle_command()
             }
             else
             {
-                #ifdef  _WIN32
+#ifdef _WIN32
                 fancy_print("Hm... diese Richtung kenne ich nicht... probiers mal mit Norden, Osten, Sueden oder Westen.\n", standard_reading_tempo, true, true);
-                #else
+#else
                 fancy_print("Hm... diese Richtung kenne ich nicht... probiers mal mit Norden, Osten, Süden oder Westen.\n", standard_reading_tempo, true, true);
-                #endif
+#endif
                 return;
             }
             fancy_print("In diese Richtung kannst du nicht weiter tauchen!\n", standard_reading_tempo, true, true);
@@ -363,7 +367,10 @@ void handle_command()
                 for (int i = 0; i < 4; i++)
                 {
                     if (rooms_directions[room_ind - 1][i] == 'n')
+                    {
                         room_ind -= 10;
+                        return;
+                    }
                 }
             }
             else if (!strcmp(attribute, "osten"))
@@ -371,7 +378,10 @@ void handle_command()
                 for (int i = 0; i < 4; i++)
                 {
                     if (rooms_directions[room_ind - 1][i] == 'o')
+                    {
                         room_ind += 1;
+                        return;
+                    }
                 }
             }
             else if (!strcmp(attribute, "westen"))
@@ -379,28 +389,34 @@ void handle_command()
                 for (int i = 0; i < 4; i++)
                 {
                     if (rooms_directions[room_ind - 1][i] == 'w')
+                    {
                         room_ind -= 1;
+                        return;
+                    }
                 }
             }
-            #ifdef  _WIN32
+#ifdef _WIN32
             else if (!strcmp(attribute, "sueden"))
-            #else
+#else
             else if (!strcmp(attribute, "süden"))
-            #endif
+#endif
             {
                 for (int i = 0; i < 4; i++)
                 {
                     if (rooms_directions[room_ind - 1][i] == 's')
+                    {
                         room_ind += 10;
+                        return;
+                    }
                 }
             }
             else
             {
-                #ifdef  _WIN32
+#ifdef _WIN32
                 fancy_print("Hm... diese Richtung kenne ich nicht... probiers mal mit Norden, Osten, Sueden oder Westen.\n", standard_reading_tempo, true, true);
-                #else
+#else
                 fancy_print("Hm... diese Richtung kenne ich nicht... probiers mal mit Norden, Osten, Süden oder Westen.\n", standard_reading_tempo, true, true);
-                #endif
+#endif
                 return;
             }
             if (last_room == room_ind)
@@ -429,7 +445,7 @@ void handle_command()
                 else
                     fancy_print("Du bist schon oben, Transuse!\n", standard_reading_tempo, true, true);
             }
-            else if (!strcmp(attribute, "ab"))
+            else if (!strcmp(attribute, "ab") || !strcmp(attribute, "unter"))
             {
                 if (underwater)
                     fancy_print("Du bist schon unten!\n", standard_reading_tempo, true, true);
@@ -519,7 +535,7 @@ void handle_command()
     {
         if (strlen(attribute))
         {
-            char buffer2[10];
+            char buffer2[11];
             for (int i = 0; i < OBJEKTE_LEN; i++)
             {
                 strcpy(buffer2, objekte[i]);
@@ -532,7 +548,7 @@ void handle_command()
                         return;
                     }
                     char buffer3[100];
-                    sprintf(buffer3, "Du greifst in deinen Rucksack legst %.5s %.11s ab.", objekte_artk2[i], objekte[i]);
+                    sprintf(buffer3, "Du greifst in deinen Rucksack und legst %.5s %.11s ab.\n", objekte_artk2[i], objekte[i]);
                     fancy_print(buffer3, standard_reading_tempo, true, true);
 
                     if (i == BLUETE && room_ind == 98 && underwater)
@@ -548,6 +564,10 @@ void handle_command()
                     fancy_print("Du durchwühlst deine Taschen, aber so ein Objekt findest du nicht bei dir.\n", standard_reading_tempo, true, true);
             }
         }
+        else
+        {
+            fancy_print("Was willst du den ablegen?\n", standard_reading_tempo, true, true);
+        }
     }
     else if (!strcmp(command, "lache"))
     {
@@ -555,7 +575,7 @@ void handle_command()
     }
     else if (!strcmp(command, "hilfe"))
     {
-        fancy_print(hilfe, standard_reading_tempo, true, true);
+        fancy_print(hilfe, standard_reading_tempo, false, true);
     }
     else if (!strcmp(command, "suche") || !strcmp(command, "finde"))
     {
@@ -624,7 +644,7 @@ void handle_command()
         }
         else if (!strcmp(attribute, "flasche") && has_item(FLASCHE))
         {
-            fancy_print("Du entfernst den Siegellack mit den Zähnen aus der Flasche. Milchig-weißer Rauch schießt heraus der sich zu einer Gestalt formt. Es ist ein Geist! Mit einem Wutschrei schleudert er die Flasche weit weg. Nur eine Vorsichtsmaßnahme! „Ich hatte mal einen angeheirateten Vetter der... Übrigens, wenn du mal Hilfe brauchen solltest, wende dich an mich, ja? Du kannst mir aber auch was schenken, denn kleine Geschenke erhalten die Freundschaft.“\n", standard_reading_tempo, true, true);
+            fancy_print("Du entfernst den Siegellack mit den Zähnen aus der Flasche. Milchig-weißer Rauch schießt heraus, der sich zu einer Gestalt formt. Es ist ein Geist! Mit einem Wutschrei schleudert er die Flasche weit weg. Nur eine Vorsichtsmaßnahme! „Ich hatte mal einen angeheirateten Vetter der... Übrigens, wenn du mal Hilfe brauchen solltest, wende dich an mich, ja? Du kannst mir aber auch was schenken, denn kleine Geschenke erhalten die Freundschaft.“\n", standard_reading_tempo, true, true);
             geist = true;
             remove_item(FLASCHE, false);
         }
@@ -658,22 +678,23 @@ void handle_command()
                     switch (rand() % 5)
                     {
                     case 0:
-                        fancy_print("„Vielleicht findest du in der Nähe einen nützlichen Gegenstand?“", standard_reading_tempo, true, true);
+                        fancy_print("„Vielleicht findest du in der Nähe einen nützlichen Gegenstand?“\n", standard_reading_tempo, true, true);
                         break;
                     case 1:
-                        fancy_print("„Du solltest dir gerade jetzt mehr Mühe geben!“", standard_reading_tempo, true, true);
+                        fancy_print("„Du solltest dir gerade jetzt mehr Mühe geben!“\n", standard_reading_tempo, true, true);
                         break;
                     case 2:
-                        fancy_print("„Ich habe jetzt keine Zeit für dich! Wir feiern in Schottland ein Familienfest!“", standard_reading_tempo, true, true);
+                        fancy_print("„Ich habe jetzt keine Zeit für dich! Wir feiern in Schottland ein Familienfest!“\n", standard_reading_tempo, true, true);
                         break;
                     case 3:
-                        fancy_print("„Selbst Geister wissen nicht immer Rat!“", standard_reading_tempo, true, true);
+                        fancy_print("„Selbst Geister wissen nicht immer Rat!“\n", standard_reading_tempo, true, true);
                         break;
                     case 4:
                         fancy_print("„Du langweilst mich mit deiner ewigen Fragerei!“ Und er gähnt herzhaft.\n", standard_reading_tempo, true, true);
                         break;
                     }
                 }
+                fancy_print("Hiermit verschwindet er.\n", standard_reading_tempo, true, true);
             }
         }
         else if (!strcmp(attribute, "löffel") && has_item(LOEFFEL) && room_ind == 98 && underwater && !in_fight) // Ei zerstören
@@ -805,8 +826,78 @@ void handle_command()
             }
         }
     }
+    else if (!strcmp(command, "rucksack"))
+    {
+        int item_count = 0;
+        for (int i = 0; i < backpack_size; i++)
+        {
+            if (backpack[i] != -1)
+            {
+                if (item_count == 0)
+                {
+                    item_count++;
+                    char buffer[50];
+                    sprintf(buffer, "In deinem Rucksack hast du %.7s %.11s", objekte_artk1[backpack[i]], objekte[backpack[i]]);
+                    fancy_print(buffer, standard_reading_tempo, true, true);
+                }
+                else
+                {
+                    char buffer[30];
+                    sprintf(buffer, ", %.7s %.11s", objekte_artk1[backpack[i]], objekte[backpack[i]]);
+                    fancy_print(buffer, standard_reading_tempo, true, true);
+                }
+            }
+        }
+        if (item_count)
+            printf(".\n");
+        else
+            fancy_print("Du, öffnest deinen Rucksack, in dem jedoch gähnende Leere herrscht.\n", standard_reading_tempo, true, true);
+    }
+    else if (!strcmp(command, "schenke") || !strcmp(command, "verschenke"))
+    {
+        if (!strlen(attribute))
+        {
+            fancy_print("Was willst du denn verschenken?\n", standard_reading_tempo, true, true);
+            return;
+        }
+        if (!geist)
+        {
+            fancy_print("Hier ist niemand, dem du etwas schenken könntest.\n", standard_reading_tempo, true, true);
+            return;
+        }
+        char buffer2[11];
+        for (int i = 0; i < OBJEKTE_LEN; i++)
+        {
+            strcpy(buffer2, objekte[i]);
+            buffer2[0] = tolower(buffer2[0]);
+            if (!strcmp(attribute, buffer2) && has_item(i))
+            {
+                bool can_be_gifted = false;
+                for (int j = 0; j < sizeof(objekte_giftable) / sizeof(int); j++)
+                {
+                    if (objekte_giftable[j] == i)
+                        can_be_gifted = true;
+                }
+                if (!can_be_gifted)
+                {
+                    fancy_print("Das kannst du nicht verschenken!\n", standard_reading_tempo, true, true);
+                    return;
+                }
+                char buffer3[100];
+                sprintf(buffer3, "Du rufst den Geist und gibst ihm %.5s %.11s aus deinen Rucksack.\n", objekte_artk2[i], objekte[i]);
+                fancy_print(buffer3, standard_reading_tempo, true, true);
+                hilfe_zaehler--;
+                fancy_print("„Dankeschön!“,der Geist verbeugt sich und verschwindet in einer Rauchwolke.\n", standard_reading_tempo, true, true);
+                remove_item(i, false);
+                break;
+            }
+            if (i == OBJEKTE_LEN - 1)
+                fancy_print("Du durchwühlst deine Taschen, aber so ein Objekt findest du nicht bei dir.\n", standard_reading_tempo, true, true);
+        }
+    }
     else
     {
+        cmd_count--;
         fancy_print("Unbekannter Befehl. Gib \"Hilfe\" ein, um eine Liste von Befehlen zu erhalten.\n", standard_reading_tempo, true, true);
     }
 }
@@ -893,42 +984,42 @@ void print_zufallsanhaenge()
     switch (rand() % 9)
     {
     case 0:
-        if (biome[room_ind - 1] != 'm' && biome[room_ind - 1] != 'a')
+        if (biome[room_ind - 1] != MEER && biome[room_ind - 1] != BAUMHAUS)
             fancy_print(zufallsanhaenge[0], standard_reading_tempo, true, true);
         break;
     case 1:
-        if (biome[room_ind - 1] != 'm' && biome[room_ind - 1] != 's')
+        if (biome[room_ind - 1] != MEER && biome[room_ind - 1] != SUMPF)
             fancy_print(zufallsanhaenge[1], standard_reading_tempo, true, true);
         break;
     case 2:
-        if (biome[room_ind - 1] == 'w' || biome[room_ind - 1] == 'l')
+        if (biome[room_ind - 1] == WIESE || biome[room_ind - 1] == WALD)
             fancy_print(zufallsanhaenge[2], standard_reading_tempo, true, true);
         break;
     case 3:
-        if (biome[room_ind - 1] != 'm' && biome[room_ind - 1] != 'h' && biome[room_ind - 1] != 'q')
+        if (biome[room_ind - 1] != MEER && biome[room_ind - 1] != HOEHLE && biome[room_ind - 1] != HOEHLENQUELLE)
             fancy_print(zufallsanhaenge[3], standard_reading_tempo, true, true);
         break;
     case 4:
-        if (biome[room_ind - 1] != 'm' && biome[room_ind - 1] != 'h' && biome[room_ind - 1] != 'q' && biome[room_ind - 1] != 'a' && has_item(KAPPE))
+        if (biome[room_ind - 1] != MEER && biome[room_ind - 1] != HOEHLE && biome[room_ind - 1] != HOEHLENQUELLE && biome[room_ind - 1] != 'a' && kappe_auf)
         {
             fancy_print(zufallsanhaenge[4], standard_reading_tempo, true, true);
             remove_item(KAPPE, true);
         }
         break;
     case 5:
-        if (biome[room_ind - 1] == 'm' && !underwater)
+        if (biome[room_ind - 1] == MEER && !underwater)
             fancy_print(zufallsanhaenge[5], standard_reading_tempo, true, true);
         break;
     case 6:
-        if (biome[room_ind - 1] == 'm' && underwater)
+        if (biome[room_ind - 1] == MEER && underwater)
             fancy_print(zufallsanhaenge[6], standard_reading_tempo, true, true);
         break;
     case 7:
-        if (biome[room_ind - 1] == 'w')
+        if (biome[room_ind - 1] == WIESE)
             fancy_print(zufallsanhaenge[7], standard_reading_tempo, true, true);
         break;
     case 8:
-        if (biome[room_ind - 1] == 'h')
+        if (biome[room_ind - 1] == HOEHLE)
             fancy_print(zufallsanhaenge[8], standard_reading_tempo, true, true);
         break;
     };
@@ -1069,13 +1160,40 @@ void on_room_enter()
         printf(".\n");
 }
 
+void special_event()
+{
+    fancy_print("Du hörst ein entferntes Grollen. Auf einmal schwankt der Boden unter dir.\n", standard_reading_tempo, true, true);
+
+    switch (biome[room_ind - 1])
+    {
+    case MEER:
+        fancy_print("Eine Riesenwelle wirft dich aufs Land.	Ein klaffender Abgrund tut sich vor dir auf. Wasser strudelt um deine Füße", standard_reading_tempo, true, true);
+        room_ind = 77;
+        break;
+
+    case HOEHLE:
+        fancy_print("Ein zentimeterbreiter Riss läuft über die Decke. Tonnenschwere Felsbrocken ersticken deinen Schrei.", standard_reading_tempo, true, true);
+        game = false;
+        break;
+
+    case HOEHLENQUELLE:
+        fancy_print("Ein zentimeterbreiter Riss läuft über die Decke. Tonnenschwere Felsbrocken ersticken deinen Schrei.", standard_reading_tempo, true, true);
+        game = false;
+        break;
+
+    case BAUMHAUS:
+        fancy_print("Du kannst dich nicht mehr halten und stürzt mit einem Aufschrei ab.", standard_reading_tempo, true, true);
+        room_ind = 53;
+        break;
+    }
+}
 //main loop
 int main()
 {
     srand((unsigned)time(NULL));
-    #ifdef _WIN32
-    SetConsoleCP(CP_UTF8);
-    #endif
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
     if (!DEBUG && !SKIP_INTRO)
         start_seq();
 
@@ -1090,6 +1208,8 @@ int main()
         }
         last_room = room_ind;
         handle_command();
+        if (cmd_count == 110)
+            special_event();
     }
     death();
     return 0;

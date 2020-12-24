@@ -11,6 +11,9 @@ Y888888P `8888Y'  `Y88P'  Y88888P YP   YP     `8888Y' Y88888P 88   YD 88      Y8
 //==================================\\\\\n\
 ||Reconstructed and ported to C by: ||\n\
 ||Jakob Weiß                        ||\n\
+||----------------------------------||\n\
+||Cover Art by:                     ||\n\
+||Julian Weiß                       ||\n\
 \\\\==================================//\n";
 
 char intro1[] = "Du befindest dich an Bord deines Fischerbootes auf hoher See. Während deine zum Trocknen aufgehängte Netze in der Abendbrise schaukeln, liegst du im Bug deines Schiffes, schaust in die untergehende Sonne und denkst an dein zu Hause zurückgebliebene Familie. Die Wellen schlagen leise an den Schiffsrumpf. Allmählich fühlst du, wie du von einer wohligen Müdigkeit umfangen wirst. In einen tiefen, traumlosen Schlaf hinübergleitend, hörst du noch das leise Säuseln des Windes...\n\n";
@@ -150,7 +153,7 @@ char underwater_descriptions[7][210] = {
 
 char buchtext[] = "Der in altertümlichen Buchstaben verfasste Text des Buches ist an vielen Stellen durch merkwürdige grüne Schleimtropfen unleserlich geworden. Trotzdem glaubst du nach einiger Zeit folgendes entziffern zu können: Wanderer, den es einst auf diese Insel verschlagen hat, höre diese Legende! Seit Urzeiten nagt die Schlange an den Grundfesten des Eilands. Doch jetzt hat das Eiland, das immer widerstehen konnte, seine ursprüngliche Kraft, neu aus sich selbst zu wachsen, verloren. Es gibt nur eine Möglichkeit, der Schlange das Leben zu entreißen: Ihr Lebensei muss zerstört werden. Obschon es ihre Lebensquelle ist, ist es doch nichts anderes als ein Ei: Errette die Insel von dieser Gefahr!\n";
 
-char hilfe[] = "Folgende Befehle stehen dir zur Verfügung:\n GEHE [Norden/Osten/Süden/Westen]\nNUTZE [OBJEKT]\nTAUCHE [Unter/Auf]\nNEHME [Objekt]\nLEGE [Objekt]\nSCHREIE\nWEINE\nLESE [Objekt]\nTrinke [Objekt]\nHILFE";
+char hilfe[] = "Folgende Befehle stehen dir zur Verfügung:\nGEHE [Norden/Osten/Süden/Westen]\nNUTZE [OBJEKT]\nTAUCHE [Ab/Auf]\nNEHME [Objekt]\nLEGE [Objekt]\nSCHREIE\nWEINE\nLACHE\nINFO [OBJEKT]\nRUCKSACK\nLESE [Objekt]\nTrinke [Objekt]\nKLETTERE [hinauf/hinab]HILFE";
 
 char zufallsanhaenge[10][170] = {
     "Ein süßes kleines, schwarz-weißes Kaninchen hüpft auf deinem Weg vorüber.\n",
@@ -160,7 +163,7 @@ char zufallsanhaenge[10][170] = {
     "Ein plötzlicher Windstoß weht dir die Kappe vom Kopf.\n",
     "Eine Möwe kreist unablässig über deinem Kopf.\n",
     "Bunte Fischschwärme ziehen ruhig vorbei.\n",
-    "Ein Schmetterling setzt sich auf deine Hand und breitet seine Flügel in die Sonne aus. Dann flattert er wieder davon.\n",
+    "Ein Schmetterling setzt sich auf deine Hand und breitet seine Flügel im Sonnenschein aus. Dann flattert er wieder davon.\n",
     "Eine Ratte huscht quiekend an deinen Füßen vorbei\n."};
 
 #define OBJEKTE_LEN 11 //how many objects are there?
@@ -218,6 +221,8 @@ const char objekte_artk2[OBJEKTE_LEN][4] = {
     "die"};
 
 const int objekte_hidden[] = {3};
+
+const int objekte_giftable[] = {0,2,10};
 
 char objekte_desc[OBJEKTE_LEN][220] = {
     "Es handelt sich um einen schmalen Goldring, der mit einem funkelnden Brillanten besetzt ist.\n",
