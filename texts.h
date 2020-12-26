@@ -164,7 +164,7 @@ char zufallsanhaenge[10][170] = {
     "Eine Möwe kreist unablässig über deinem Kopf.\n",
     "Bunte Fischschwärme ziehen ruhig vorbei.\n",
     "Ein Schmetterling setzt sich auf deine Hand und breitet seine Flügel im Sonnenschein aus. Dann flattert er wieder davon.\n",
-    "Eine Ratte huscht quiekend an deinen Füßen vorbei\n."};
+    "Eine Ratte huscht quiekend an deinen Füßen vorbei.\n"};
 
 #define OBJEKTE_LEN 11 //how many objects are there?
 

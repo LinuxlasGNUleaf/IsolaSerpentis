@@ -28,8 +28,6 @@ int underwater_room_ind = 0;
 int schlucht_zaehler = 0;
 int hilfe_zaehler = 0;
 int backpack[4] = {-1, -1, -1, -1};
-int backpack_size = 4;
-int idle_turns = 2;
 int cmd_count = 0;
 
 bool kappe_auf = false;
@@ -64,7 +62,7 @@ bool has_item(int item)
 }
 
 //adds item to inventory
-void add_item(int item)
+bool add_item(int item)
 {
     for (int i = 0; i < sizeof(backpack) / sizeof(int); i++)
     {
@@ -72,11 +70,10 @@ void add_item(int item)
         {
             backpack[i] = item;
             objekte_loc[item] = -1;
-            backpack_size--;
-            return;
+            return true;
         }
     }
-    return;
+    return false;
 }
 
 //removes specified item from inventory
@@ -89,7 +86,6 @@ void remove_item(int item, bool drop)
         if (backpack[i] == item)
         {
             backpack[i] = -1;
-            backpack_size++;
             if (drop)
                 objekte_loc[item] = room_ind;
             return;
@@ -309,7 +305,7 @@ void handle_command()
                     }
                 }
             }
-            else if (!strcmp(attribute, "osten")  || !strcmp(attribute, "o"))
+            else if (!strcmp(attribute, "osten") || !strcmp(attribute, "o"))
             {
                 for (int i = 0; i < sizeof(underwater_rooms) / sizeof(int); i++)
                 {
@@ -470,8 +466,12 @@ void handle_command()
             else
                 fancy_print("Du kannst entweder auf- oder abtauchen.\n", standard_reading_tempo, true, true);
         }
-        else
+        else if (!strcmp(attribute, "auf"))
+            fancy_print("Du schnappst nach Luft und merkst, dass du dich auf festem Boden befindest und somit nicht auftauchen musst...\n", standard_reading_tempo, true, true);
+        else if (!strcmp(attribute, "ab") || !strcmp(attribute, "unter"))
             fancy_print("Du versuchst dich kopfüber in den Boden zu wühlen. Erst dann merkst du, dass du dich an Land befindest...\n", standard_reading_tempo, true, true);
+        else
+            fancy_print("Also erstens mal bist du an Land, und was genau soll der zweite Teil sein?\n", standard_reading_tempo, true, true);
     }
     else if (!strcmp(command, "schreie"))
     {
@@ -508,7 +508,7 @@ void handle_command()
                 if (!strcmp(attribute, buffer2) && room_ind == objekte_loc[i])
                 {
                     char buffer3[140];
-                    if (backpack_size > 0)
+                    if (add_item(i))
                     {
                         sprintf(buffer3, "Du verstaust %.5s %.11s in deinem Rucksack.\n", objekte_artk2[i], objekte[i]);
                         fancy_print(buffer3, standard_reading_tempo, true, true);
@@ -519,7 +519,6 @@ void handle_command()
                         fancy_print(buffer3, standard_reading_tempo, true, true);
                         return;
                     }
-                    add_item(i);
                     break;
                 }
                 if (i == OBJEKTE_LEN - 1)
@@ -604,7 +603,9 @@ void handle_command()
             game = false;
             return;
         }
-        else if (in_fight && !strcmp(attribute, "messer") && has_item(MESSER)) // Messer benutzen
+        else if (!strcmp(attribute, "messer") && has_item(MESSER)) // Messer benutzen
+        {
+            if (in_fight)
         {
             switch (room_ind)
             {
@@ -621,7 +622,14 @@ void handle_command()
                 break;
             }
         }
-        else if (in_fight && !strcmp(attribute, "schild") && has_item(SCHILD)) //Schild benutzen
+            else
+            {
+                fancy_print("Das Messer scheint scheint sehr scharf zu sein, aber momentan kannst du nichts damit anfangen...\n", standard_reading_tempo, true, true);
+            }
+        }
+        else if (!strcmp(attribute, "schild") && has_item(SCHILD)) //Schild benutzen
+        {
+            if (in_fight)
         {
             switch (room_ind)
             {
@@ -640,6 +648,11 @@ void handle_command()
                 fancy_print("Unter Wasser kannst du den Schild nicht schnell genug bewegen. Es ist dem Fisch ein leichtes, deine Deckung zu umschwimmen.\n", standard_reading_tempo, true, true);
                 end_fight(false);
                 break;
+            }
+        }
+            else
+            {
+                fancy_print("Deinen Schild kannst du nur im Kampf benutzen!\n", standard_reading_tempo, true, true);
             }
         }
         else if (!strcmp(attribute, "flasche") && has_item(FLASCHE))
@@ -702,6 +715,9 @@ void handle_command()
             fancy_print("DU HAST GEWONNEN, HERZLICHEN GLÜCKWUNSCH!\n", slow_reading_tempo, true, true);
             game = false;
         }
+        else if (!strcmp(attribute, "löffel") || !strcmp(attribute, "gabel")){
+            fancy_print("Mit diesem Besteck wirst du wohl vorerst nichts anfangen können, Frühstück ist nirgendwo in Sicht.\n", slow_reading_tempo, true, true);
+        }
         else if (!strcmp(attribute, "kappe") && has_item(KAPPE))
         {
             if (kappe_auf)
@@ -714,25 +730,16 @@ void handle_command()
                 kappe_auf = true;
             }
         }
-        else
+        else if (!strlen(attribute))
         {
-            if (!strlen(attribute))
+            if (in_fight)
                 fancy_print("Nur ein Superman könnte so ein Untier mit den Händen erwürgen!\n", standard_reading_tempo, true, true);
             else
-                fancy_print("Du hast dieses Objekt nicht oder kannst es momentan nicht benutzen!\n", standard_reading_tempo, true, true);
-            if (in_fight)
-            {
-                idle_turns--;
-                if (idle_turns > 0)
-                {
-                    fancy_print("Das Monster kommt immer näher. Dir bleibt nicht viel Zeit!\n", standard_reading_tempo, true, true);
+                fancy_print("Was genau willst du den benutzen?\n",standard_reading_tempo,true,true);
                 }
                 else
                 {
-                    fancy_print("Du hast zulange gezögert und somit dein Ende besiegelt...\n", standard_reading_tempo, true, true);
-                    end_fight(false);
-                }
-            }
+            fancy_print("So ein Objekt hast du nicht!\n", standard_reading_tempo, true, true);
         }
     }
     else if (!strcmp(command, "lese"))
@@ -812,7 +819,7 @@ void handle_command()
         {
             switch (room_ind)
             {
-            case 64:
+            case 62:
                 fancy_print("Bedächtig hangelst du dich wieder hinab auf den Boden.\n", standard_reading_tempo, true, true);
                 room_ind = 53;
                 break;
@@ -829,7 +836,7 @@ void handle_command()
     else if (!strcmp(command, "rucksack"))
     {
         int item_count = 0;
-        for (int i = 0; i < backpack_size; i++)
+        for (int i = 0; i < sizeof(backpack) / sizeof(int); i++)
         {
             if (backpack[i] != -1)
             {
@@ -1074,7 +1081,6 @@ void on_room_enter()
         case 0:
             fancy_print("Da du dich jedoch für die Klauenabdrücke interessierst, folgst du der ihrer Spur. Mit einem Mal weht dir heißer, fauliger Atem entgegen. Du hebst den Blick und ein Troll mit langem, verfilztem Fell und verzerrter Fratze wankt auf dich zu. Er beobachtet dich lauernd aus halb geschlossenen, tückischen Augen.\n", standard_reading_tempo, true, true);
             in_fight = true;
-            idle_turns = 2;
             return;
         case 1:
             fancy_print("Der massige Körper des Trolls liegt hier auf dem Boden. Vorsichtig steigst du über ihn hinweg.\n", standard_reading_tempo, true, true);
@@ -1087,7 +1093,6 @@ void on_room_enter()
         case 0:
             fancy_print("Du bemerkst eine heftige Bewegung des Schilfs. Die Schilfwand spaltet sich und ein Wesen tritt heraus, dessen grässliche Erscheinung zu beschreiben der Computer sich sträubt. Grünen Schleim sabbernd, schwabbelt es auf dich zu.\n", standard_reading_tempo, true, true);
             in_fight = true;
-            idle_turns = 2;
             return;
         case 1:
             break;
@@ -1099,7 +1104,6 @@ void on_room_enter()
         case 0:
             fancy_print("Du siehst genauer hin und würgender Ekel steigt in dir auf: Legionen von rubinroter Riesenameisen mit knackenden Kieferklammern strömen auf dich zu.\n", standard_reading_tempo, true, true);
             in_fight = true;
-            idle_turns = 2;
             return;
         case 1:
             fancy_print("Der Ameisenhaufen wirkt verlassen, keine Spur mehr von den Riesenameisen.\n", standard_reading_tempo, true, true);
@@ -1114,7 +1118,6 @@ void on_room_enter()
             case 0:
                 fancy_print("Aus diesem Riff saust dir ein meterlanger, silbrig glänzender Fisch entgegen. In seinem Maul blinken Reihen von dreieckigen Zähnen.\n", standard_reading_tempo, true, true);
                 in_fight = true;
-                idle_turns = 2;
                 return;
             case 1:
                 fancy_print("Halb im Sand vergraben liegt hier ein weiß blinkendes, kleines Ei.\n", standard_reading_tempo, true, true);
@@ -1172,17 +1175,17 @@ void special_event()
         break;
 
     case HOEHLE:
-        fancy_print("Ein zentimeterbreiter Riss läuft über die Decke. Tonnenschwere Felsbrocken ersticken deinen Schrei.", standard_reading_tempo, true, true);
+        fancy_print("Ein zentimeterbreiter Riss läuft über die Decke. Tonnenschwere Felsbrocken ersticken deinen Schrei.\n", standard_reading_tempo, true, true);
         game = false;
         break;
 
     case HOEHLENQUELLE:
-        fancy_print("Ein zentimeterbreiter Riss läuft über die Decke. Tonnenschwere Felsbrocken ersticken deinen Schrei.", standard_reading_tempo, true, true);
+        fancy_print("Ein zentimeterbreiter Riss läuft über die Decke. Tonnenschwere Felsbrocken ersticken deinen Schrei.\n", standard_reading_tempo, true, true);
         game = false;
         break;
 
     case BAUMHAUS:
-        fancy_print("Du kannst dich nicht mehr halten und stürzt mit einem Aufschrei ab.", standard_reading_tempo, true, true);
+        fancy_print("Du kannst dich nicht mehr halten und stürzt mit einem Aufschrei ab.\n", standard_reading_tempo, true, true);
         room_ind = 53;
         break;
     }
