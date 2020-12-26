@@ -297,7 +297,7 @@ void handle_command()
         }
         if (underwater)
         {
-            if (!strcmp(attribute, "norden"))
+            if (!strcmp(attribute, "norden") || !strcmp(attribute, "n"))
             {
                 for (int i = 0; i < sizeof(underwater_rooms) / sizeof(int); i++)
                 {
@@ -309,7 +309,7 @@ void handle_command()
                     }
                 }
             }
-            else if (!strcmp(attribute, "osten"))
+            else if (!strcmp(attribute, "osten")  || !strcmp(attribute, "o"))
             {
                 for (int i = 0; i < sizeof(underwater_rooms) / sizeof(int); i++)
                 {
@@ -321,7 +321,7 @@ void handle_command()
                     }
                 }
             }
-            else if (!strcmp(attribute, "westen"))
+            else if (!strcmp(attribute, "westen") || !strcmp(attribute, "w"))
             {
                 for (int i = 0; i < sizeof(underwater_rooms) / sizeof(int); i++)
                 {
@@ -334,9 +334,9 @@ void handle_command()
                 }
             }
 #ifdef _WIN32
-            else if (!strcmp(attribute, "sueden"))
+            else if (!strcmp(attribute, "sueden") || !strcmp(attribute, "s"))
 #else
-            else if (!strcmp(attribute, "süden"))
+            else if (!strcmp(attribute, "süden") || !strcmp(attribute, "s"))
 #endif
             {
                 for (int i = 0; i < sizeof(underwater_rooms) / sizeof(int); i++)
@@ -362,7 +362,7 @@ void handle_command()
         }
         else
         {
-            if (!strcmp(attribute, "norden"))
+            if (!strcmp(attribute, "norden") || !strcmp(attribute, "n"))
             {
                 for (int i = 0; i < 4; i++)
                 {
@@ -373,7 +373,7 @@ void handle_command()
                     }
                 }
             }
-            else if (!strcmp(attribute, "osten"))
+            else if (!strcmp(attribute, "osten") || !strcmp(attribute, "o"))
             {
                 for (int i = 0; i < 4; i++)
                 {
@@ -384,11 +384,11 @@ void handle_command()
                     }
                 }
             }
-            else if (!strcmp(attribute, "westen"))
+            else if (!strcmp(attribute, "westen") || !strcmp(attribute, "w"))
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    if (rooms_directions[room_ind - 1][i] == 'w')
+                    if (rooms_directions[room_ind - 1][i] == 'w' || !strcmp(attribute, "w"))
                     {
                         room_ind -= 1;
                         return;
@@ -396,9 +396,9 @@ void handle_command()
                 }
             }
 #ifdef _WIN32
-            else if (!strcmp(attribute, "sueden"))
+            else if (!strcmp(attribute, "sueden") || !strcmp(attribute, "s"))
 #else
-            else if (!strcmp(attribute, "süden"))
+            else if (!strcmp(attribute, "süden") || !strcmp(attribute, "s"))
 #endif
             {
                 for (int i = 0; i < 4; i++)
