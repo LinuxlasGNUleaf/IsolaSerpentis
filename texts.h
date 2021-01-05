@@ -251,8 +251,6 @@ int objekte_loc[OBJEKTE_LEN] = {26, 36, 49, 55, 62, 62, 62, 65, 67, 85, 96};
 #define AMEISEN_LOC 65
 #define FISCH_LOC 98
 
-int monster_defeated[MONSTER_LEN] = {0, 0, 0, 0};
-
 char new_object_lines[4][25] = {
     "Vor dir siehst du %s %s",
     "Du stößst auf %s %s",
