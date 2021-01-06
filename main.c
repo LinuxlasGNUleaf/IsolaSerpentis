@@ -16,7 +16,7 @@
 #define GetCurrentDir getcwd
 #endif
 
-#define SKIP_INTRO 1
+#define SKIP_INTRO 0
 #define DEBUG 0
 #define INTEGRITY_CHECK 1
 
@@ -321,7 +321,7 @@ void load_game(char name[])
     }
     uint32_t hash_calculated = SuperFastHash(savestring, strlen(savestring));
     fclose(fp);
-    if (hash_given != hash_calculated)
+    if ((hash_given != hash_calculated) && INTEGRITY_CHECK)
     {
         fancy_print("\nSpielstand ist korrupt. Wähle einen anderen Spielstand zum Laden aus.\n", standard_reading_tempo, 1, 1);
         return;

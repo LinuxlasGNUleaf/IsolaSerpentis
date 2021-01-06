@@ -153,7 +153,7 @@ char underwater_descriptions[7][210] = {
 
 char buchtext[] = "Der in altertümlichen Buchstaben verfasste Text des Buches ist an vielen Stellen durch merkwürdige grüne Schleimtropfen unleserlich geworden. Trotzdem glaubst du nach einiger Zeit folgendes entziffern zu können: Wanderer, den es einst auf diese Insel verschlagen hat, höre diese Legende! Seit Urzeiten nagt die Schlange an den Grundfesten des Eilands. Doch jetzt hat das Eiland, das immer widerstehen konnte, seine ursprüngliche Kraft, neu aus sich selbst zu wachsen, verloren. Es gibt nur eine Möglichkeit, der Schlange das Leben zu entreißen: Ihr Lebensei muss zerstört werden. Obschon es ihre Lebensquelle ist, ist es doch nichts anderes als ein Ei: Errette die Insel von dieser Gefahr!\n";
 
-char hilfe[] = "Folgende Befehle stehen dir zur Verfügung:\nGEHE [Norden/Osten/Süden/Westen]\nNUTZE [OBJEKT]\nTAUCHE [Ab/Auf]\nNEHME [Objekt]\nLEGE [Objekt]\nSCHREIE\nWEINE\nLACHE\nINFO [OBJEKT]\nRUCKSACK\nLESE [Objekt]\nTrinke [Objekt]\nKLETTERE [hinauf/hinab]HILFE\n";
+char hilfe[] = "Folgende Befehle stehen dir zur Verfügung:\nGEHE [Norden/Osten/Süden/Westen]\nNUTZE [OBJEKT]\nTAUCHE [Ab/Auf]\nNEHME [Objekt]\nLEGE [Objekt]\nSCHREIE\nWEINE\nLACHE\nINFO [OBJEKT]\nRUCKSACK\nLESE [Objekt]\nTRINKE [Objekt]\nKLETTERE [hinauf/hinab]\nSPEICHERE [Name]\nLADE [Name]\nHILFE\n";
 
 char zufallsanhaenge[10][170] = {
     "Ein süßes kleines, schwarz-weißes Kaninchen hüpft auf deinem Weg vorüber.\n",
