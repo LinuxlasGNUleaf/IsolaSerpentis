@@ -250,7 +250,8 @@ void save_game(char name[])
         char answer;
         fancy_print("Speicherstand mit diesem Namen existiert bereits. Überschreiben? (y/N)", standard_reading_tempo, 1, 1);
         answer = getc(stdin);
-        while ((getchar()) != '\n'); //clear stdin buffer
+        while (getchar() != '\n')
+            ; //clear stdin buffer
         if (tolower(answer) != 'y')
         {
             fancy_print("Abbruch.\n", standard_reading_tempo, 1, 1);
@@ -262,11 +263,14 @@ void save_game(char name[])
     printf("%s\n", savefile);
 
     char savestring[400];
-    sprintf(savestring, "%i,%i,%i,%i,%i,%i,%i,%i,%i,%i,%i", room_ind, last_room, schlucht_zaehler, hilfe_zaehler, cmd_count, kappe_auf, geist, underwater, can_dive, in_fight, game);
+    sprintf(savestring, "%i,%i,%i,%i,%i,%i,%i,%i,%i,%i,%i|", room_ind, last_room, schlucht_zaehler, hilfe_zaehler, cmd_count, kappe_auf, geist, underwater, can_dive, in_fight, game);
     char temp[10];
     for (int i = 0; i < sizeof(backpack) / sizeof(int); i++)
     {
-        sprintf(temp, ",%i", backpack[i]);
+        if (i)
+            sprintf(temp, ",%i", backpack[i]);
+        else
+            sprintf(temp, "%i", backpack[i]);
         strcat(savestring, temp);
     }
     for (int i = 0; i < OBJEKTE_LEN; i++)
@@ -323,20 +327,41 @@ void load_game(char name[])
         return;
     }
     char temp[100];
-    sscanf(savestring, "%i,%i,%i,%i,%i,%hhi,%hhi,%hhi,%hhi,%hhi,%hhi,%s", &room_ind, &last_room, &schlucht_zaehler, &hilfe_zaehler, &cmd_count, &kappe_auf, &geist, &underwater, &can_dive, &in_fight, &game, temp);
+    sscanf(savestring, "%i,%i,%i,%i,%i,%hhi,%hhi,%hhi,%hhi,%hhi,%hhi|%s", &room_ind, &last_room, &schlucht_zaehler, &hilfe_zaehler, &cmd_count, &kappe_auf, &geist, &underwater, &can_dive, &in_fight, &game, temp);
+    char *pch;
+    pch = strtok(temp, ",");
     for (int i = 0; i < sizeof(backpack) / sizeof(int); i++)
     {
-        sscanf(temp, ",%i", &backpack[i]);
+
+        backpack[i] = atoi(pch);
+        pch = strtok(NULL, ",");
+        if (pch == NULL)
+        {
+            fancy_print("\nFehler beim Wiederherstellen des Spielstandes. Spielstand korrupt. Bitte Spiel neustarten.", standard_reading_tempo, 1, 1);
+            exit(0);
+        }
     }
     for (int i = 0; i < OBJEKTE_LEN; i++)
     {
-        sscanf(temp, ",%i", &objekte_loc[i]);
+        objekte_loc[i] = atoi(pch);
+        pch = strtok(NULL, ",");
+        if (pch == NULL)
+        {
+            fancy_print("\nFehler beim Wiederherstellen des Spielstandes. Spielstand korrupt. Bitte Spiel neustarten.", standard_reading_tempo, 1, 1);
+            exit(0);
+        }
     }
     for (int i = 0; i < MONSTER_LEN; i++)
     {
-        sscanf(temp, ",%i", &monster_defeated[i]);
+        monster_defeated[i] = atoi(pch);
+        pch = strtok(NULL, ",");
+        if (pch == NULL && i < MONSTER_LEN-1)
+        {
+            fancy_print("\nFehler beim Wiederherstellen des Spielstandes. Spielstand korrupt. Bitte Spiel neustarten.", standard_reading_tempo, 1, 1);
+            exit(0);
+        }
     }
-    fancy_print("fertig. Spielstand erfolgreich wiederhergestellt.\n",standard_reading_tempo,1,1);
+    fancy_print("fertig. Spielstand erfolgreich wiederhergestellt.\n", standard_reading_tempo, 1, 1);
     last_room = -1;
 }
 
