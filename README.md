@@ -9,3 +9,6 @@ A text-adventure by DaWe and AnEn ported from BASIC to C by JaWs
 - [x] fight implementation
 - [x] overall game management
 - [x] save/load feature
+
+## Map for Isola Serpentis (contains spoilers)
+![Isola Serpentis Map](map.jpg)
